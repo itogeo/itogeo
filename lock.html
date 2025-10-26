@@ -63,7 +63,7 @@
     const PASSWORD = "ito2025";
 
     if (localStorage.getItem("authorized") === "true") {
-      window.location.replace("index.html");
+      window.location.replace("/");
     }
 
     const input = document.getElementById("passwordInput");
@@ -73,7 +73,7 @@
     const authorize = () => {
       if (input.value.trim() === PASSWORD) {
         localStorage.setItem("authorized", "true");
-        window.location.replace("index.html");
+        window.location.replace("/");
       } else {
         error.textContent = "Incorrect password. Try again.";
         input.value = "";
