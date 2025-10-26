@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>DuckPatrol Map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      if (localStorage.getItem("authorized") !== "true") {
+        window.location.replace("/lock.html");
+      }
+    </script>
 
     <!-- Leaflet -->
     <link

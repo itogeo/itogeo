@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const randomImage = bgImages[Math.floor(Math.random() * bgImages.length)];
   const image = new Image();
-  const imagePath = `data/backgroundimages/${randomImage}`;
+  const imagePath = `/data/backgroundimages/${randomImage}`;
   image.src = imagePath;
 
   const applyBackground = () => {

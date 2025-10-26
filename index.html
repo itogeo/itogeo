@@ -4,18 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ito Geospatial</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-<body>
-  <!-- Password check -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
   <script>
     if (localStorage.getItem("authorized") !== "true") {
-      window.location.href = "lock.html";
+      window.location.replace("/lock.html");
     }
   </script>
-
+</head>
+<body>
   <!-- HEADER INCLUDE -->
-  <div data-include="partials/header.html"></div>
+  <div data-include="/partials/header.html"></div>
 
   <main>
     <!-- HERO SECTION -->
@@ -25,7 +23,7 @@
         <p>
           We clean, document, and deliver terrain and imagery so public works, watershed groups, and planners can act with confidence.
         </p>
-        <a href="expertise.html" class="btn">See What We Do</a>
+        <a href="/expertise/" class="btn">See What We Do</a>
       </div>
     </section>
 
@@ -46,11 +44,11 @@
   </main>
 
   <!-- FOOTER INCLUDE -->
-  <div data-include="partials/footer.html"></div>
+  <div data-include="/partials/footer.html"></div>
 
   <!-- JS -->
-  <script src="assets/js/load_partials.js"></script>
-  <script src="assets/js/backgrounds.js"></script>
-  <script src="assets/js/header_fade.js"></script>
+  <script src="/assets/js/load_partials.js"></script>
+  <script src="/assets/js/backgrounds.js"></script>
+  <script src="/assets/js/header_fade.js"></script>
 </body>
 </html>
