@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tools | Ito Geospatial</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script>
+    if (localStorage.getItem("authorized") !== "true") {
+      window.location.replace("/lock.html");
+    }
+  </script>
+</head>
+<body>
+  <div data-include="/partials/header.html"></div>
+
+  <main>
+    <section class="hero dynamic-bg tools-hero">
+      <div class="hero-content">
+        <p class="eyebrow">Open source stack</p>
+        <h1>Tools We Trust</h1>
+        <p>
+          Every Ito Geospatial deliverable is built with transparent, well-documented tools so agencies can trace decisions,
+          rerun workflows, and stand up to public review.
+        </p>
+        <div class="hero-actions">
+          <a href="/projects/duckpatrol/index.html" class="btn">See an Automation Template</a>
+          <a href="/expertise/" class="btn btn-outline">Back to Expertise</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section soft-panel toolkit-intro">
+      <h2>Principled, Inspectable Workflows</h2>
+      <p>
+        Open tooling keeps our work auditable. We version processing chains, share the same binaries with partners, and publish
+        parameter files alongside the maps so anyone can step through the process.
+      </p>
+      <p>
+        The stack below covers desktop analysis, heavy data engineering, web sharing, and quick field visualizations. It's the
+        backbone of our floodplain refinements, watershed planning, and emergency-response dashboards.
+      </p>
+    </section>
+
+    <section class="page-section toolkit-grid-section">
+      <h2>Core Tools in Rotation</h2>
+      <div class="toolkit-grid">
+        <article class="tool-card">
+          <div class="tool-icon">Q</div>
+          <h3>QGIS</h3>
+          <p>Primary desktop environment for editing, styling, and quick validation with dozens of community plug-ins.</p>
+          <ul class="tool-badges">
+            <li>Desktop</li>
+            <li>Plugins</li>
+            <li>Cartography</li>
+          </ul>
+          <a class="tool-link" href="https://qgis.org/" target="_blank" rel="noopener noreferrer">Docs</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">G</div>
+          <h3>GDAL / OGR</h3>
+          <p>Reliable translators for rasters, vectors, and tiled products. We script reprojection and tiling directly with GDAL.</p>
+          <ul class="tool-badges">
+            <li>CLI</li>
+            <li>Conversion</li>
+            <li>Automation</li>
+          </ul>
+          <a class="tool-link" href="https://gdal.org/" target="_blank" rel="noopener noreferrer">Docs</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">GR</div>
+          <h3>GRASS GIS</h3>
+          <p>Advanced terrain modeling, hydrologic enforcement, and raster math when we need scientific repeatability.</p>
+          <ul class="tool-badges">
+            <li>Hydrology</li>
+            <li>Raster</li>
+            <li>Scripting</li>
+          </ul>
+          <a class="tool-link" href="https://grass.osgeo.org/" target="_blank" rel="noopener noreferrer">Docs</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">PD</div>
+          <h3>PDAL</h3>
+          <p>Point-cloud pipelines for lidar classification, thinning, and intensity analytics that flow into our DEM refinements.</p>
+          <ul class="tool-badges">
+            <li>Lidar</li>
+            <li>JSON Pipelines</li>
+            <li>QA</li>
+          </ul>
+          <a class="tool-link" href="https://pdal.io/" target="_blank" rel="noopener noreferrer">Docs</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">Py</div>
+          <h3>Python + GeoPandas</h3>
+          <p>Automation backbone for QC, change detection, and reproducible reporting via notebooks and containerized flows.</p>
+          <ul class="tool-badges">
+            <li>Automation</li>
+            <li>Analytics</li>
+            <li>Notebooks</li>
+          </ul>
+          <a class="tool-link" href="https://geopandas.org/" target="_blank" rel="noopener noreferrer">Docs</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">FR</div>
+          <h3>Fiona + Rasterio</h3>
+          <p>Lightweight IO libraries to move shapefiles, GeoPackages, and tiles through our pipelines with explicit schema control.</p>
+          <ul class="tool-badges">
+            <li>Python</li>
+            <li>IO</li>
+            <li>Validation</li>
+          </ul>
+          <a class="tool-link" href="https://rasterio.readthedocs.io/" target="_blank" rel="noopener noreferrer">Docs</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">OSM</div>
+          <h3>OpenStreetMap + Overpass</h3>
+          <p>Community-maintained base data for context layers, asset audits, and quick waypoint creation for field teams.</p>
+          <ul class="tool-badges">
+            <li>Basemap</li>
+            <li>API</li>
+            <li>Community</li>
+          </ul>
+          <a class="tool-link" href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">Site</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">MF</div>
+          <h3>Leaflet + MapLibre</h3>
+          <p>Lightweight web viewers for stakeholder briefings, custom base maps, and embedding quick QA maps like Duck Patrol.</p>
+          <ul class="tool-badges">
+            <li>Web</li>
+            <li>Story Maps</li>
+            <li>Sharing</li>
+          </ul>
+          <a class="tool-link" href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer">Site</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section soft-panel">
+      <h2>How We Deploy the Stack</h2>
+      <div class="toolkit-pillars">
+        <article>
+          <h3>Versioned Pipelines</h3>
+          <p>Every script lives in Git with pinned dependencies so partners can reproduce the exact same outputs months later.</p>
+        </article>
+        <article>
+          <h3>Shared Playbooks</h3>
+          <p>We hand over YAML/JSON configs plus checklist docs so internal GIS leads can rerun models without guesswork.</p>
+        </article>
+        <article>
+          <h3>Training & Transfer</h3>
+          <p>Screen shares, short videos, and office-hour style support make sure the tools stick with staff turnover.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+
+  <script src="/assets/js/load_partials.js"></script>
+  <script src="/assets/js/backgrounds.js"></script>
+  <script src="/assets/js/header_fade.js"></script>
+</body>
+</html>
