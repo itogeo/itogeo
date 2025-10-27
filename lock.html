@@ -7,17 +7,18 @@
   <style>
     :root {
       color-scheme: dark;
-      --navy-900: #050c18;
-      --navy-700: #102a45;
-      --accent-peach: #ffb38a;
-      --accent-mint: #8fd6c1;
-      --text-light: #f7fbff;
-      --text-muted: #c7d6ea;
+      --navy-900: #06122b;
+      --navy-700: #152b52;
+      --navy-600: #1f3a68;
+      --accent-primary: #6fb3ff;
+      --accent-secondary: #9cc9ff;
+      --text-light: #f6f9ff;
+      --text-muted: #b9c8e6;
     }
 
     body {
-      background: radial-gradient(circle at top, rgba(143, 214, 193, 0.25), transparent 55%),
-        linear-gradient(135deg, #050c18, #102a45 60%, #081a2f);
+      background: radial-gradient(circle at top, rgba(156, 201, 255, 0.25), transparent 55%),
+        linear-gradient(135deg, #06122b, #152b52 60%, #0d1f3c);
       color: var(--text-light);
       font-family: "Inter", sans-serif;
       min-height: 100vh;
@@ -42,7 +43,7 @@
     }
 
     .lock-card h1 {
-      color: var(--accent-mint);
+      color: var(--accent-primary);
       margin: 0 0 0.5rem;
     }
 
@@ -66,13 +67,13 @@
     }
 
     input:focus {
-      border-color: var(--accent-peach);
+      border-color: var(--accent-secondary);
       background: rgba(255, 255, 255, 0.1);
     }
 
     button {
       width: 100%;
-      background: linear-gradient(135deg, var(--accent-peach), var(--accent-mint));
+      background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
       color: var(--navy-900);
       border: none;
       border-radius: 12px;
@@ -106,7 +107,7 @@
       position: absolute;
       width: 520px;
       height: 520px;
-      background: radial-gradient(circle, rgba(255, 179, 138, 0.25), transparent 65%);
+      background: radial-gradient(circle, rgba(156, 201, 255, 0.3), transparent 65%);
       filter: blur(40px);
       top: -120px;
       right: -80px;
