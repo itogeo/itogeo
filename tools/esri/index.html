@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESRI Suite | Ito Geospatial</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script>
+    if (localStorage.getItem("authorized") !== "true") {
+      window.location.replace("/lock.html");
+    }
+  </script>
+</head>
+<body>
+  <div data-include="/partials/header.html"></div>
+
+  <main>
+    <section class="hero dynamic-bg tools-hero">
+      <div class="hero-content">
+        <p class="eyebrow">ArcGIS expertise</p>
+        <h1>ESRI Suite Delivery</h1>
+        <p>
+          ArcGIS Pro, Enterprise, and Online stay in lock-step with our open-source stack. We build governance-ready content,
+          automate publishing, and document every step so agencies can maintain their own portals.
+        </p>
+        <div class="hero-actions">
+          <a href="/tools/" class="btn">Back to Open Source</a>
+          <a href="/expertise/" class="btn btn-outline">See Our Work</a>
+        </div>
+        <div class="hero-media-grid">
+          <img src="/data/backgroundimages/river_town.jpg" alt="Dashboard-ready river corridor" loading="lazy" />
+          <img src="/data/backgroundimages/crop_fields_nir.jpg" alt="ArcGIS Pro multispectral analysis" loading="lazy" />
+          <img src="/data/backgroundimages/ocean_land.jpg" alt="Coastal change detection map" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section soft-panel">
+      <h2>Why We Invest in the ESRI Platform</h2>
+      <p class="section-intro">
+        Many of our partners rely on ArcGIS for daily operations. We build in that environment when a proprietary stack is the
+        shortest path to production&mdash;and we keep it interoperable with the open-source tooling highlighted on our main Tools
+        page.
+      </p>
+      <div class="toolkit-pillars">
+        <article>
+          <h3>Repeatable Projects</h3>
+          <p>ModelBuilder, Python toolboxes, and APRX templates are versioned so teams can rerun complex analyses without a consultant on standby.</p>
+        </article>
+        <article>
+          <h3>Portal Governance</h3>
+          <p>We design folder structures, item metadata, and sharing groups that survive audits and onboarding of new staff.</p>
+        </article>
+        <article>
+          <h3>Bridging Stacks</h3>
+          <p>ArcGIS jobs synchronize with our containers, ensuring data can move between ArcGIS, QGIS, and web experiences with minimal friction.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section toolkit-grid-section">
+      <h2>Core ESRI Components We Support</h2>
+      <div class="toolkit-grid">
+        <article class="tool-card">
+          <div class="tool-icon">Pro</div>
+          <h3>ArcGIS Pro</h3>
+          <p>Production-grade APRX templates, task automation, and Python toolboxes packaged with documentation and shared symbol libraries.</p>
+          <ul class="tool-badges">
+            <li>APRX Templates</li>
+            <li>Task Frameworks</li>
+            <li>Python Toolboxes</li>
+          </ul>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">Srv</div>
+          <h3>ArcGIS Enterprise</h3>
+          <p>High-availability portal configurations, service publishing pipelines, and monitoring dashboards aligned with IT governance.</p>
+          <ul class="tool-badges">
+            <li>Portal</li>
+            <li>Feature Services</li>
+            <li>Automation</li>
+          </ul>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">OL</div>
+          <h3>ArcGIS Online</h3>
+          <p>Hosted layers, view configurations, and Hub sites prepared with lifecycle policies so the public sees authoritative data.</p>
+          <ul class="tool-badges">
+            <li>Hosted Layers</li>
+            <li>Hub Sites</li>
+            <li>Sharing Policy</li>
+          </ul>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">XP</div>
+          <h3>StoryMaps & Experience Builder</h3>
+          <p>Audience-ready narratives, executive dashboards, and field briefings that reuse the same services powering internal analysis.</p>
+          <ul class="tool-badges">
+            <li>Executive Dashboards</li>
+            <li>Storytelling</li>
+            <li>Field Briefs</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section toolkit-grid-section hardware-section">
+      <h2>Integration Playbooks</h2>
+      <div class="hardware-grid">
+        <article class="tool-card hardware-card">
+          <div class="hardware-photo">Automation</div>
+          <h3>ArcPy + Notebooks</h3>
+          <p>ArcGIS Notebook Server runtimes mirror our container stack so the same scripts can run on-prem, in the cloud, or in a local dev environment.</p>
+          <ul class="hardware-specs">
+            <li>Notebook Server</li>
+            <li>Conda Environments</li>
+            <li>Scheduled Jobs</li>
+          </ul>
+        </article>
+
+        <article class="tool-card hardware-card">
+          <div class="hardware-photo">Data</div>
+          <h3>Data Interchange</h3>
+          <p>Versioned ETL using Data Interoperability and FME ensures authoritative layers stay synchronized with open data portals and internal systems.</p>
+          <ul class="hardware-specs">
+            <li>ETL Workbenches</li>
+            <li>Schema Mapping</li>
+            <li>Quality Gates</li>
+          </ul>
+        </article>
+
+        <article class="tool-card hardware-card">
+          <div class="hardware-photo">Delivery</div>
+          <h3>Stakeholder Experiences</h3>
+          <p>Experience Builder apps, dashboards, and mobile maps tested with real users before handoff so decision makers can act immediately.</p>
+          <ul class="hardware-specs">
+            <li>UX Testing</li>
+            <li>Role-Based Views</li>
+            <li>Field Deployments</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+
+  <script src="/assets/js/load_partials.js"></script>
+  <script src="/assets/js/backgrounds.js"></script>
+  <script src="/assets/js/header_fade.js"></script>
+</body>
+</html>

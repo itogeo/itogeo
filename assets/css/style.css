@@ -1,30 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 :root {
-  --navy-900: #06122b;
-  --navy-800: #0d1f3c;
-  --navy-700: #152b52;
-  --navy-600: #1f3a68;
-  --navy-500: #2a4b82;
-  --sky-300: #6fb3ff;
-  --sky-200: #9cc9ff;
-  --sky-100: #dce9ff;
-  --sky-050: #f4f7ff;
-  --accent-primary: #6fb3ff;
-  --accent-secondary: #9cc9ff;
-  --accent-highlight: #f5f8ff;
-  --text-light: #f6f9ff;
-  --text-muted: #b9c8e6;
+  --navy-900: #203759;
+  --navy-800: #28446b;
+  --navy-700: #345680;
+  --navy-600: #3f6796;
+  --navy-500: #4f7caf;
+  --sky-300: #a9cbff;
+  --sky-200: #cfe1ff;
+  --sky-100: #eaf2ff;
+  --sky-050: #f7faff;
+  --accent-primary: #a9cbff;
+  --accent-secondary: #d6e7ff;
+  --accent-highlight: #f2f6ff;
+  --text-body: #223454;
+  --text-muted: #5a6f93;
+  --text-light: #f9fbff;
+  --surface-card: rgba(255, 255, 255, 0.9);
+  --surface-muted: rgba(255, 255, 255, 0.72);
 }
 
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background:
-    radial-gradient(circle at 20% 20%, rgba(111, 179, 255, 0.25), transparent 60%),
-    radial-gradient(circle at 80% 0%, rgba(156, 201, 255, 0.2), transparent 55%),
-    var(--navy-900);
-  color: var(--text-light);
+    radial-gradient(circle at 15% 15%, rgba(169, 203, 255, 0.35), transparent 60%),
+    radial-gradient(circle at 85% 5%, rgba(214, 231, 255, 0.55), transparent 55%),
+    var(--sky-050);
+  color: var(--text-body);
   line-height: 1.6;
   transition: background 1.5s ease-in-out;
 }
@@ -42,7 +45,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(8, 26, 47, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   position: fixed;
   top: 0;
   left: 0;
@@ -53,6 +56,7 @@ nav {
   gap: 1.5rem;
   flex-wrap: wrap;
   box-sizing: border-box;
+  border-bottom: 1px solid rgba(32, 55, 89, 0.08);
 }
 
 nav ul {
@@ -64,7 +68,7 @@ nav ul {
 }
 
 nav a {
-  color: var(--blue-100);
+  color: var(--navy-800);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s ease;
@@ -91,7 +95,7 @@ nav a:hover {
 }
 
 .logo span {
-  color: var(--text-light);
+  color: var(--navy-900);
   font-size: 1.1rem;
 }
 
@@ -99,7 +103,7 @@ nav a:hover {
   display: none;
   background: transparent;
   border: 0;
-  color: var(--text-light);
+  color: var(--navy-800);
   cursor: pointer;
   padding: 0.25rem;
   margin-left: auto;
@@ -135,15 +139,15 @@ nav a:hover {
 /* HERO SECTION */
 /* ---------------------------- */
 .hero {
-  min-height: 60vh;
+  min-height: 48vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 6rem 2rem 4rem;
-  color: var(--text-light);
+  padding: 5rem 2rem 3rem;
+  color: var(--navy-900);
   position: relative;
-  background-color: var(--navy-800);
+  background-color: var(--sky-050);
   background-image: none;
   background-position: center;
   background-repeat: no-repeat;
@@ -156,9 +160,9 @@ nav a:hover {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-      135deg,
-      rgba(8, 26, 47, 0.25),
-      rgba(5, 12, 24, 0.85)
+      120deg,
+      rgba(242, 246, 255, 0.92),
+      rgba(220, 232, 255, 0.82)
     );
   pointer-events: none;
   transition: opacity 0.4s ease;
@@ -171,7 +175,7 @@ nav a:hover {
   height: 420px;
   top: -10%;
   right: 5%;
-  background: radial-gradient(circle, rgba(156, 201, 255, 0.4), transparent 65%);
+  background: radial-gradient(circle, rgba(169, 203, 255, 0.65), transparent 65%);
   filter: blur(30px);
   opacity: 0.65;
   pointer-events: none;
@@ -179,9 +183,9 @@ nav a:hover {
 
 .hero.hero-image-ready::before {
   background: linear-gradient(
-      135deg,
-      rgba(8, 26, 47, 0.2),
-      rgba(4, 12, 24, 0.78)
+      120deg,
+      rgba(242, 246, 255, 0.88),
+      rgba(214, 225, 255, 0.76)
     );
 }
 
@@ -206,7 +210,7 @@ nav a:hover {
 .hero-content h1 {
   font-size: 2.8rem;
   margin-bottom: 1rem;
-  color: var(--text-light);
+  color: var(--navy-900);
 }
 
 .hero-content p {
@@ -237,12 +241,12 @@ nav a:hover {
 
 .btn.btn-outline {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: var(--text-light);
+  border: 1px solid rgba(32, 55, 89, 0.25);
+  color: var(--navy-700);
 }
 
 .btn.btn-outline:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(169, 203, 255, 0.12);
 }
 
 .hero-actions {
@@ -250,6 +254,27 @@ nav a:hover {
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.hero-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.hero-media-grid img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(32, 55, 89, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-media-grid img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 32px rgba(32, 55, 89, 0.2);
 }
 
 .eyebrow {
@@ -289,12 +314,12 @@ nav a:hover {
 
 /* ABOUT SECTION ON HOME PAGE */
 .about-home {
-  background: linear-gradient(135deg, rgba(42, 75, 120, 0.35), rgba(156, 201, 255, 0.08));
-  color: var(--text-light);
+  background: linear-gradient(135deg, rgba(247, 250, 255, 0.95), rgba(214, 227, 255, 0.75));
+  color: var(--text-body);
   padding: 5rem 2rem;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(32, 55, 89, 0.08);
+  border-bottom: 1px solid rgba(32, 55, 89, 0.08);
 }
 
 .about-home h2 {
@@ -342,9 +367,10 @@ nav a:hover {
 }
 
 .about-intro {
-  background: rgba(8, 26, 47, 0.65);
-  border-block: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--surface-card);
+  border-block: 1px solid rgba(32, 55, 89, 0.08);
   padding: 4.5rem 2rem;
+  box-shadow: 0 24px 48px rgba(32, 55, 89, 0.12);
 }
 
 .about-intro .bio-grid {
@@ -403,8 +429,8 @@ nav a:hover {
 }
 
 .team-card {
-  background: rgba(8, 26, 47, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--surface-card);
+  border: 1px solid rgba(32, 55, 89, 0.08);
   border-radius: 18px;
   overflow: hidden;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
@@ -415,15 +441,15 @@ nav a:hover {
 }
 
 .team-card:focus-visible {
-  box-shadow: 0 0 0 3px rgba(111, 179, 255, 0.45);
+  box-shadow: 0 0 0 3px rgba(169, 203, 255, 0.45);
 }
 
 .team-card:hover,
 .team-card:focus-within,
 .team-card[data-expanded="true"] {
   transform: translateY(-6px);
-  border-color: rgba(111, 179, 255, 0.35);
-  box-shadow: 0 18px 36px rgba(4, 12, 24, 0.65);
+  border-color: rgba(169, 203, 255, 0.45);
+  box-shadow: 0 18px 36px rgba(32, 55, 89, 0.15);
 }
 
 .team-photo {
@@ -440,7 +466,7 @@ nav a:hover {
 .team-name {
   font-size: 1.25rem;
   margin: 0 0 0.35rem;
-  color: var(--text-light);
+  color: var(--navy-900);
 }
 
 .team-role {
@@ -450,7 +476,7 @@ nav a:hover {
 }
 
 .team-panel {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(32, 55, 89, 0.08);
   padding: 0 1.6rem 1.6rem;
   max-height: 0;
   opacity: 0;
@@ -484,9 +510,9 @@ nav a:hover {
 }
 
 .team-tags li {
-  background: rgba(111, 179, 255, 0.12);
-  border: 1px solid rgba(111, 179, 255, 0.4);
-  color: var(--accent-secondary);
+  background: rgba(169, 203, 255, 0.18);
+  border: 1px solid rgba(169, 203, 255, 0.35);
+  color: var(--navy-600);
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
   font-size: 0.85rem;
@@ -507,7 +533,7 @@ nav a:hover {
   opacity: 1;
   transform: none;
   pointer-events: auto;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(32, 55, 89, 0.08);
   padding-top: 0.75rem;
 }
 
@@ -537,8 +563,8 @@ nav a:hover {
 }
 
 .partner-card {
-  background: rgba(8, 26, 47, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--surface-card);
+  border: 1px solid rgba(32, 55, 89, 0.08);
   border-radius: 18px;
   padding: 2rem;
   display: flex;
@@ -550,8 +576,8 @@ nav a:hover {
 
 .partner-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(111, 179, 255, 0.35);
-  box-shadow: 0 24px 44px rgba(6, 18, 43, 0.4);
+  border-color: rgba(169, 203, 255, 0.45);
+  box-shadow: 0 24px 44px rgba(32, 55, 89, 0.18);
 }
 
 .partner-card img {
@@ -583,18 +609,19 @@ nav a:hover {
 .partner-tags li {
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  background: rgba(111, 179, 255, 0.12);
-  border: 1px solid rgba(111, 179, 255, 0.25);
-  color: var(--accent-secondary);
+  background: rgba(169, 203, 255, 0.18);
+  border: 1px solid rgba(169, 203, 255, 0.32);
+  color: var(--navy-600);
   font-size: 0.8rem;
 }
 
 .values-section {
   margin-top: 4rem;
-  background: rgba(8, 26, 47, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--surface-card);
+  border: 1px solid rgba(32, 55, 89, 0.08);
   border-radius: 16px;
   padding: 3rem 2rem;
+  box-shadow: 0 20px 45px rgba(32, 55, 89, 0.12);
 }
 
 .values-section h2 {
@@ -605,7 +632,7 @@ nav a:hover {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  color: var(--text-light);
+  color: var(--navy-800);
 }
 
 .values-list h3 {
@@ -620,12 +647,12 @@ nav a:hover {
 }
 
 .soft-panel {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--surface-card);
+  border: 1px solid rgba(32, 55, 89, 0.08);
   border-radius: 20px;
   padding: clamp(2rem, 4vw, 3rem);
-  box-shadow: 0 30px 60px rgba(4, 12, 24, 0.45);
-  backdrop-filter: blur(6px);
+  box-shadow: 0 30px 60px rgba(32, 55, 89, 0.12);
+  backdrop-filter: blur(4px);
 }
 
 .toolkit-intro p {
@@ -645,8 +672,8 @@ nav a:hover {
 .tool-card {
   padding: 1.75rem;
   border-radius: 18px;
-  background: rgba(8, 26, 47, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--surface-card);
+  border: 1px solid rgba(32, 55, 89, 0.08);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -655,8 +682,8 @@ nav a:hover {
 
 .tool-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(111, 179, 255, 0.35);
-  box-shadow: 0 18px 32px rgba(4, 12, 24, 0.45);
+  border-color: rgba(169, 203, 255, 0.45);
+  box-shadow: 0 18px 32px rgba(32, 55, 89, 0.16);
 }
 
 .tool-icon {
@@ -674,7 +701,7 @@ nav a:hover {
 
 .tool-card h3 {
   margin: 0.5rem 0 0;
-  color: var(--text-light);
+  color: var(--navy-900);
 }
 
 .tool-card p {
@@ -694,9 +721,9 @@ nav a:hover {
 .tool-badges li {
   padding: 0.3rem 0.75rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(32, 55, 89, 0.12);
   font-size: 0.8rem;
-  color: var(--text-light);
+  color: var(--navy-700);
 }
 
 .tool-link {
@@ -732,8 +759,8 @@ nav a:hover {
   width: 100%;
   height: 160px;
   border-radius: 14px;
-  border: 1px dashed rgba(255, 255, 255, 0.2);
-  background: rgba(6, 18, 43, 0.55);
+  border: 1px dashed rgba(32, 55, 89, 0.18);
+  background: rgba(214, 227, 255, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -755,10 +782,10 @@ nav a:hover {
 .hardware-specs li {
   padding: 0.35rem 0.65rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(169, 203, 255, 0.18);
+  border: 1px solid rgba(169, 203, 255, 0.32);
   font-size: 0.78rem;
-  color: var(--text-light);
+  color: var(--navy-700);
 }
 
 .hardware-card footer {
@@ -777,8 +804,8 @@ nav a:hover {
 .toolkit-pillars article {
   padding: 1.5rem;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--surface-muted);
+  border: 1px solid rgba(32, 55, 89, 0.08);
 }
 
 .toolkit-pillars h3 {
@@ -808,14 +835,14 @@ nav a:hover {
 
 .card {
   display: block;
-  background: rgba(8, 26, 47, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--surface-card);
+  border: 1px solid rgba(32, 55, 89, 0.08);
   border-radius: 12px;
   padding: 2rem;
   width: 100%;
   max-width: 360px;
   margin: 0 auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 18px 32px rgba(32, 55, 89, 0.12);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: left;
   text-decoration: none;
@@ -849,8 +876,8 @@ nav a:hover {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(8, 26, 47, 0.35);
-  color: var(--text-light);
+  box-shadow: 0 24px 40px rgba(32, 55, 89, 0.18);
+  color: var(--navy-900);
 }
 
 .expertise-card:hover .card-cta {
@@ -872,16 +899,17 @@ nav a:hover {
   display: grid;
   gap: 1.75rem;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  background: rgba(8, 26, 47, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--surface-card);
+  border: 1px solid rgba(32, 55, 89, 0.08);
   border-radius: 16px;
   padding: 2.5rem 2rem;
   position: relative;
+  box-shadow: 0 22px 46px rgba(32, 55, 89, 0.14);
 }
 
 .project-case--highlight {
-  border-color: rgba(111, 179, 255, 0.35);
-  box-shadow: 0 20px 45px rgba(4, 12, 24, 0.45);
+  border-color: rgba(169, 203, 255, 0.45);
+  box-shadow: 0 26px 52px rgba(32, 55, 89, 0.18);
 }
 
 .project-case-text h3 {
@@ -902,11 +930,11 @@ nav a:hover {
 
 .project-case-note {
   align-self: start;
-  background: rgba(111, 179, 255, 0.08);
-  border: 1px solid rgba(111, 179, 255, 0.25);
+  background: rgba(169, 203, 255, 0.18);
+  border: 1px solid rgba(169, 203, 255, 0.35);
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
-  color: var(--text-light);
+  color: var(--navy-800);
 }
 
 .project-status-tag {
@@ -915,7 +943,7 @@ nav a:hover {
   gap: 0.4rem;
   padding: 0.3rem 0.7rem;
   border-radius: 999px;
-  background: rgba(111, 179, 255, 0.18);
+  background: rgba(169, 203, 255, 0.22);
   color: var(--accent-primary);
   font-size: 0.78rem;
   font-weight: 600;
@@ -934,8 +962,8 @@ nav a:hover {
   width: 100%;
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(8, 26, 47, 0.9);
+  border: 1px solid rgba(32, 55, 89, 0.12);
+  background: rgba(247, 250, 255, 0.9);
   padding-top: 56.25%;
 }
 
@@ -950,9 +978,9 @@ nav a:hover {
 /* ---------------------------- */
 /* CLIENTS SECTION */
 .clients {
-  background: linear-gradient(135deg, rgba(42, 75, 120, 0.35), rgba(6, 18, 43, 0.85));
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  background: linear-gradient(135deg, rgba(247, 250, 255, 0.95), rgba(226, 236, 255, 0.85));
+  border-top: 1px solid rgba(32, 55, 89, 0.08);
+  border-bottom: 1px solid rgba(32, 55, 89, 0.08);
   margin-top: 4rem;
 }
 
@@ -964,7 +992,7 @@ nav a:hover {
 }
 
 .clients-inner h2 {
-  color: var(--text-light);
+  color: var(--navy-900);
   margin-bottom: 2.5rem;
 }
 
@@ -975,8 +1003,8 @@ nav a:hover {
 }
 
 .client-card {
-  background: rgba(6, 18, 43, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--surface-card);
+  border: 1px solid rgba(32, 55, 89, 0.08);
   border-radius: 18px;
   padding: 2rem;
   text-align: left;
@@ -989,8 +1017,8 @@ nav a:hover {
 
 .client-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(111, 179, 255, 0.35);
-  box-shadow: 0 28px 56px rgba(6, 18, 43, 0.5);
+  border-color: rgba(169, 203, 255, 0.45);
+  box-shadow: 0 28px 56px rgba(32, 55, 89, 0.18);
 }
 
 .client-logo {
@@ -1021,7 +1049,7 @@ nav a:hover {
 .client-points li {
   position: relative;
   padding-left: 1.4rem;
-  color: var(--text-light);
+  color: var(--navy-800);
 }
 
 .client-points li::before {
@@ -1033,7 +1061,7 @@ nav a:hover {
   left: 0;
   top: 0.55rem;
   background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  box-shadow: 0 0 0 2px rgba(111, 179, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(169, 203, 255, 0.3);
 }
 
 /* ---------------------------- */
@@ -1042,9 +1070,9 @@ nav a:hover {
 footer {
   text-align: center;
   padding: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(32, 55, 89, 0.08);
   color: var(--text-muted);
-  background: var(--navy-900);
+  background: rgba(247, 250, 255, 0.92);
   font-size: 0.9rem;
 }
 
@@ -1067,6 +1095,15 @@ footer a:hover {
 /* RESPONSIVE DESIGN */
 /* ---------------------------- */
 @media (max-width: 768px) {
+  .hero-media-grid {
+    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .hero-media-grid img {
+    height: 100px;
+  }
+
   nav {
     align-items: center;
     padding: 1rem 1.5rem;
@@ -1081,8 +1118,8 @@ footer a:hover {
     gap: 0.75rem;
     width: 100%;
     padding: 1rem 1.5rem;
-    background: rgba(8, 26, 47, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(32, 55, 89, 0.1);
     border-radius: 12px;
     display: none;
   }
@@ -1110,8 +1147,8 @@ footer a:hover {
   }
 
   .hero {
-    min-height: 70vh;
-    padding: 5.5rem 1.5rem 3.5rem;
+    min-height: 56vh;
+    padding: 5rem 1.5rem 3rem;
   }
 
   .page-section {

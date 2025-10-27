@@ -25,7 +25,13 @@
         </p>
         <div class="hero-actions">
           <a href="/projects/duckpatrol/index.html" class="btn">See an Automation Template</a>
+          <a href="/tools/esri/" class="btn">ESRI Suite</a>
           <a href="/expertise/" class="btn btn-outline">Back to Expertise</a>
+        </div>
+        <div class="hero-media-grid">
+          <img src="/data/backgroundimages/crop_fields_nir.jpg" alt="False color crop analysis" loading="lazy" />
+          <img src="/data/backgroundimages/crop_fields.jpg" alt="Agricultural rows prepared for mapping" loading="lazy" />
+          <img src="/data/backgroundimages/ocean_land.jpg" alt="Coastal terrain imagery used in analysis" loading="lazy" />
         </div>
       </div>
     </section>
@@ -44,11 +50,16 @@
 
     <section class="page-section toolkit-grid-section">
       <h2>Software We Rely On</h2>
+      <p class="section-intro">
+        We package open-source tooling so public agencies can actually deploy it&mdash;from containerized processing chains to
+        reproducible notebooks that echo the latest peer-reviewed methods. Our job is to translate academic and research-grade
+        science into workflows that survive procurement, turnover, and real-world scrutiny.
+      </p>
       <div class="toolkit-grid">
         <article class="tool-card">
           <div class="tool-icon">Q</div>
           <h3>QGIS</h3>
-          <p>Primary desktop environment for editing, styling, and quick validation with dozens of community plug-ins.</p>
+          <p>Primary desktop environment for editing, styling, and QA. We hand off curated style packs and project templates that partners can reload without hunting for plug-ins.</p>
           <ul class="tool-badges">
             <li>Desktop</li>
             <li>Plugins</li>
@@ -60,7 +71,7 @@
         <article class="tool-card">
           <div class="tool-icon">G</div>
           <h3>GDAL / OGR</h3>
-          <p>Reliable translators for rasters, vectors, and tiled products. We script reprojection and tiling directly with GDAL.</p>
+          <p>CLI translators for rasters, vectors, and tiling. Every GDAL workflow ships inside reusable containers so counties get the exact binaries we use in production.</p>
           <ul class="tool-badges">
             <li>CLI</li>
             <li>Conversion</li>
@@ -72,7 +83,7 @@
         <article class="tool-card">
           <div class="tool-icon">GR</div>
           <h3>GRASS GIS</h3>
-          <p>Advanced terrain modeling, hydrologic enforcement, and raster math when we need scientific repeatability.</p>
+          <p>Raster science for terrain modeling, hydrologic enforcement, and research-backed analytics. GRASS modules give us parity with academic labs while staying reproducible in the field.</p>
           <ul class="tool-badges">
             <li>Hydrology</li>
             <li>Raster</li>
@@ -84,7 +95,7 @@
         <article class="tool-card">
           <div class="tool-icon">PD</div>
           <h3>PDAL</h3>
-          <p>Point-cloud pipelines for lidar classification, thinning, and intensity analytics that flow into our DEM refinements.</p>
+          <p>Point-cloud pipelines for lidar classification, thinning, and intensity analytics. PDAL JSON recipes keep our DEM refinements inspectable and easy to rerun.</p>
           <ul class="tool-badges">
             <li>Lidar</li>
             <li>JSON Pipelines</li>
@@ -96,7 +107,7 @@
         <article class="tool-card">
           <div class="tool-icon">Py</div>
           <h3>Python + GeoPandas</h3>
-          <p>Automation backbone for QC, change detection, and reproducible reporting via notebooks and containerized flows.</p>
+          <p>Automation backbone for QC, change detection, and reporting. We maintain containerized GeoPandas stacks so agencies can rerun notebooks years down the road.</p>
           <ul class="tool-badges">
             <li>Automation</li>
             <li>Analytics</li>
@@ -108,7 +119,7 @@
         <article class="tool-card">
           <div class="tool-icon">FR</div>
           <h3>Fiona + Rasterio</h3>
-          <p>Lightweight IO libraries to move shapefiles, GeoPackages, and tiles through our pipelines with explicit schema control.</p>
+          <p>Lightweight IO libraries to move shapefiles, GeoPackages, and tiles through repeatable pipelines with explicit schema control and validation hooks.</p>
           <ul class="tool-badges">
             <li>Python</li>
             <li>IO</li>
@@ -120,7 +131,7 @@
         <article class="tool-card">
           <div class="tool-icon">OSM</div>
           <h3>OpenStreetMap + Overpass</h3>
-          <p>Community-maintained base data for context layers, asset audits, and quick waypoint creation for field teams.</p>
+          <p>Community-maintained base data for context layers, asset audits, and quick waypoint creation. We snapshot extracts so crews always know what vintage they are using.</p>
           <ul class="tool-badges">
             <li>Basemap</li>
             <li>API</li>
@@ -132,13 +143,24 @@
         <article class="tool-card">
           <div class="tool-icon">MF</div>
           <h3>Leaflet + MapLibre</h3>
-          <p>Lightweight web viewers for stakeholder briefings, custom base maps, and embedding quick QA maps like Duck Patrol.</p>
+          <p>Lightweight web viewers for stakeholder briefings, custom base maps, and embedding QA experiences like Duck Patrol. We pair them with versioned configuration so nothing breaks on update.</p>
           <ul class="tool-badges">
             <li>Web</li>
             <li>Story Maps</li>
             <li>Sharing</li>
           </ul>
           <a class="tool-link" href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer">Site</a>
+        </article>
+        <article class="tool-card">
+          <div class="tool-icon">ES</div>
+          <h3>ArcGIS Platform</h3>
+          <p>Enterprise deployments across ArcGIS Pro, ArcGIS Online, Enterprise, and Experience Builder. We document data models, hosted feature services, and Python toolboxes so clients can sustain mixed proprietary stacks.</p>
+          <ul class="tool-badges">
+            <li>ArcGIS Pro</li>
+            <li>Enterprise</li>
+            <li>Experience Builder</li>
+          </ul>
+          <a class="tool-link" href="/tools/esri/">Deep Dive</a>
         </article>
       </div>
     </section>

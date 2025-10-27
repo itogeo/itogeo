@@ -6,20 +6,20 @@
   <title>Protected | Ito Geospatial</title>
   <style>
     :root {
-      color-scheme: dark;
-      --navy-900: #06122b;
-      --navy-700: #152b52;
-      --navy-600: #1f3a68;
-      --accent-primary: #6fb3ff;
-      --accent-secondary: #9cc9ff;
-      --text-light: #f6f9ff;
-      --text-muted: #b9c8e6;
+      color-scheme: light;
+      --navy-900: #203759;
+      --navy-700: #345680;
+      --navy-600: #3f6796;
+      --accent-primary: #a9cbff;
+      --accent-secondary: #d6e7ff;
+      --text-light: #f9fbff;
+      --text-muted: #5a6f93;
     }
 
     body {
-      background: radial-gradient(circle at top, rgba(156, 201, 255, 0.25), transparent 55%),
-        linear-gradient(135deg, #06122b, #152b52 60%, #0d1f3c);
-      color: var(--text-light);
+      background: radial-gradient(circle at top, rgba(169, 203, 255, 0.4), transparent 55%),
+        linear-gradient(135deg, #f7faff, #e2ecff 60%, #d6e5ff);
+      color: var(--navy-900);
       font-family: "Inter", sans-serif;
       min-height: 100vh;
       display: flex;
@@ -32,11 +32,11 @@
 
     .lock-card {
       width: min(420px, 90vw);
-      background: rgba(5, 12, 24, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(32, 55, 89, 0.12);
       border-radius: 24px;
       padding: 2.5rem;
-      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 30px 60px rgba(32, 55, 89, 0.16);
       text-align: center;
       backdrop-filter: blur(12px);
       z-index: 1;
@@ -56,9 +56,9 @@
       width: 100%;
       padding: 0.75rem 1rem;
       border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-light);
+      border: 1px solid rgba(32, 55, 89, 0.12);
+      background: rgba(247, 250, 255, 0.6);
+      color: var(--navy-900);
       font-size: 1rem;
       margin-bottom: 1rem;
       outline: none;
@@ -68,7 +68,7 @@
 
     input:focus {
       border-color: var(--accent-secondary);
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(214, 227, 255, 0.6);
     }
 
     button {
@@ -107,7 +107,7 @@
       position: absolute;
       width: 520px;
       height: 520px;
-      background: radial-gradient(circle, rgba(156, 201, 255, 0.3), transparent 65%);
+      background: radial-gradient(circle, rgba(169, 203, 255, 0.45), transparent 65%);
       filter: blur(40px);
       top: -120px;
       right: -80px;
