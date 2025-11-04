@@ -45,6 +45,50 @@
         </p>
       </div>
     </section>
+
+    <section id="contact" class="page-section contact-section">
+      <div class="contact-grid">
+        <div class="contact-intro">
+          <h2>Start a Project</h2>
+          <p>
+            Ito Geospatial helps public agencies, utilities, and community groups move from uncertain data to confident decisions. We pair
+            elevation cleanup, remote sensing, automation, and legal strategy so teams of any size can launch and maintain modern spatial programs.
+          </p>
+          <ul class="contact-services">
+            <li>Remote sensing and elevation refinement that holds up under review</li>
+            <li>Automation and data pipelines that staff can rerun without support contracts</li>
+            <li>Policy and legal coordination to keep permitting and documentation aligned</li>
+          </ul>
+          <p>
+            Tell us what you are trying to build and we will assemble the right mix of core staff and rotating specialists for your scope.
+          </p>
+        </div>
+        <form class="contact-form" action="mailto:itogeospatial@gmail.com" method="post" enctype="text/plain">
+          <label for="contact-name">Name</label>
+          <input id="contact-name" name="name" type="text" required />
+
+          <label for="contact-email">Email</label>
+          <input id="contact-email" name="email" type="email" required />
+
+          <label for="contact-organization">Organization</label>
+          <input id="contact-organization" name="organization" type="text" />
+
+          <label for="contact-services">Services of interest</label>
+          <select id="contact-services" name="services">
+            <option value="remote-sensing">Remote sensing & imagery analytics</option>
+            <option value="elevation">Elevation & hydrology refinement</option>
+            <option value="automation">Automation & data pipelines</option>
+            <option value="legal">Legal & policy coordination</option>
+            <option value="general">General consultation</option>
+          </select>
+
+          <label for="contact-message">Project details</label>
+          <textarea id="contact-message" name="message" rows="5" placeholder="Share goals, timelines, or existing data sources"></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER INCLUDE -->
