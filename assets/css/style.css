@@ -531,24 +531,6 @@ nav ul li {
   margin: 1.1rem 0 0.9rem;
 }
 
-.team-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.team-tags li {
-  background: rgba(169, 203, 255, 0.18);
-  border: 1px solid rgba(169, 203, 255, 0.35);
-  color: var(--navy-600);
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-}
-
 .team-card.team-card--note {
   justify-content: center;
   cursor: default;
@@ -626,24 +608,6 @@ nav ul li {
 .partner-card p {
   color: var(--text-muted);
   margin: 0;
-}
-
-.partner-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.partner-tags li {
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  background: rgba(169, 203, 255, 0.18);
-  border: 1px solid rgba(169, 203, 255, 0.32);
-  color: var(--navy-600);
-  font-size: 0.8rem;
 }
 
 .values-section {
@@ -812,23 +776,6 @@ nav ul li {
 .tool-card p {
   margin: 0;
   color: var(--text-muted);
-}
-
-.tool-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.tool-badges li {
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  border: 1px solid rgba(32, 55, 89, 0.12);
-  font-size: 0.8rem;
-  color: var(--navy-700);
 }
 
 .tool-link {
