@@ -609,7 +609,7 @@ nav ul li {
 
 .team-photo {
   width: 100%;
-  height: 180px;
+  height: 320px;
   object-fit: cover;
   object-position: top;
   display: block;
@@ -1385,7 +1385,7 @@ footer a:hover {
   }
 
   .team-photo {
-    height: 160px;
+    height: 280px;
   }
 
   .project-case {
@@ -1424,7 +1424,7 @@ footer a:hover {
   }
 
   .team-photo {
-    height: 150px;
+    height: 240px;
   }
 
   .project-case {
@@ -1442,6 +1442,6 @@ footer a:hover {
 
 @media (max-width: 420px) {
   .team-photo {
-    height: 140px;
+    height: 200px;
   }
 }
