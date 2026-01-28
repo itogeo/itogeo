@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tools | Ito Geospatial</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script>
+    if (localStorage.getItem("authorized") !== "true") {
+      window.location.replace("/lock.html");
+    }
+  </script>
+</head>
+<body>
+  <div data-include="/partials/header.html"></div>
+
+  <main>
+    <section class="hero dynamic-bg tools-hero">
+      <div class="hero-content">
+        <p class="eyebrow">Cartography + Data Science</p>
+        <h1>Map-First Tools We Keep Ready</h1>
+        <p>
+          Inspired by modern studios like Stamen, we lead with expressive cartography grounded in rigorous data science.
+          Mapbox, open-source analytics, and Esri deployments all live inside one playbook so stakeholders can understand a place in seconds.
+        </p>
+        <div class="hero-actions">
+          <a href="/projects/duckpatrol/index.html" class="btn">See an Automation Template</a>
+          <a href="/expertise/" class="btn btn-outline">Back to Expertise</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section soft-panel toolkit-intro">
+      <h2>Principled, Inspectable Workflows</h2>
+      <p>
+        Every map, dashboard, or briefing starts with traceable data transformations. We version the processing chains, export configuration files
+        with the deliverables, and keep private repositories synced with the same binaries we ship to clients.
+      </p>
+      <p>
+        The stack below shows how we move from raw point clouds to expressive Mapbox experiences, keep hardware aligned with data capture,
+        and make sure Esri environments stay in lockstep with our open tooling.
+      </p>
+    </section>
+
+    <section id="software" class="page-section toolkit-grid-section">
+      <h2>Mapbox + Data Science Stack</h2>
+      <p class="section-intro">
+        Mapbox gives us the creative headroom to tell spatial stories. We wrap it with open-source analytics so private firms and governments
+        get the same modern cartography—whether the map lives on a public site, in a secure portal, or on a rugged laptop in the field.
+      </p>
+      <div class="toolkit-grid">
+        <article class="tool-card">
+          <div class="tool-icon">MB</div>
+          <h3>Mapbox Studio Systems</h3>
+          <p>Custom basemaps, typography, and boundary logic built for executive briefings and public story maps. We version every style so updates flow from staging to production without surprises.</p>
+          <a class="tool-link" href="https://www.mapbox.com/mapbox-studio" target="_blank" rel="noopener noreferrer">Mapbox Studio</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">GL</div>
+          <h3>Mapbox GL JS + Maps SDK</h3>
+          <p>High-performing map canvases for browsers, StoryMaps embeds, and mobile dashboards. We tune interactions for decision-makers—temporal sliders, swipe tools, and annotations that explain the science.</p>
+          <a class="tool-link" href="https://docs.mapbox.com/mapbox-gl-js/api/" target="_blank" rel="noopener noreferrer">Mapbox GL JS</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">TS</div>
+          <h3>Mapbox Tilesets + Tippecanoe</h3>
+          <p>Vector tiling pipelines for massive infrastructure audits, floodplain revisions, and scenario planning. Tippecanoe recipes live beside Mapbox Upload API jobs so anyone can rerun them.</p>
+          <a class="tool-link" href="https://docs.mapbox.com/help/troubleshooting/tiling-service/" target="_blank" rel="noopener noreferrer">Tileset Service</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">AT</div>
+          <h3>Mapbox Atlas + Boundaries</h3>
+          <p>Self-hosted Mapbox deployments for agencies that need everything offline or behind the firewall. We ship curated boundary datasets and synchronization scripts so Atlas mirrors the public stack.</p>
+          <a class="tool-link" href="https://www.mapbox.com/atlas" target="_blank" rel="noopener noreferrer">Mapbox Atlas</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">Py</div>
+          <h3>Python + GeoPandas</h3>
+          <p>Spatial data science notebooks that prep and score datasets before they hit Mapbox. We bundle environment files, sample notebooks, and test data so analysts can reproduce the same charts.</p>
+          <a class="tool-link" href="https://geopandas.org/" target="_blank" rel="noopener noreferrer">Docs</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">FR</div>
+          <h3>Fiona + Rasterio</h3>
+          <p>Lean IO libraries that move GeoPackages, Cloud Optimized GeoTIFFs, and tiles through repeatable automation. They bridge the data science layer with Mapbox-ready datasets.</p>
+          <a class="tool-link" href="https://rasterio.readthedocs.io/" target="_blank" rel="noopener noreferrer">Docs</a>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">LD</div>
+          <h3>PDAL + GDAL Lab</h3>
+          <p>Lidar classification, hydrologic enforcement, and raster transforms happen here before we publish them as Mapbox tiles or Esri image services. JSON configurations keep every step transparent.</p>
+          <a class="tool-link" href="https://pdal.io/" target="_blank" rel="noopener noreferrer">PDAL</a>
+        </article>
+      </div>
+    </section>
+
+    <hr class="section-break" />
+
+    <section id="hardware" class="page-section toolkit-grid-section hardware-section">
+      <h2>Hardware We Keep Ready</h2>
+      <p class="section-intro">
+        Field capture still fuels the maps. The gear below keeps control points, imagery, and on-site edits flowing straight into the same data science pipelines that power our Mapbox and Esri deliverables.
+      </p>
+      <div class="hardware-grid">
+        <article class="tool-card hardware-card">
+          <div class="hardware-photo">Add Photo</div>
+          <h3>UAV Mapping Platforms</h3>
+          <p>
+            Multispectral and RGB drones deployed for shoreline checks, post-storm assessments, and rapid asset inventories.
+            RTK workflows snap every flight back to the same control network.
+          </p>
+          <ul class="hardware-specs">
+            <li>DJI Mavic 3 Enterprise</li>
+            <li>RTK base + network corrections</li>
+            <li>MSX/thermal payload options</li>
+          </ul>
+          <footer>Swap in field imagery once you have it ready.</footer>
+        </article>
+
+        <article class="tool-card hardware-card">
+          <div class="hardware-photo">Add Photo</div>
+          <h3>GNSS & Survey Kits</h3>
+          <p>
+            Ground control setup for lidar validation, culvert checks, and cross-section tie-ins. Packaged with quick-start docs
+            so partner crews can collect reproducible points.
+          </p>
+          <ul class="hardware-specs">
+            <li>Trimble R12/R2 receivers</li>
+            <li>Field-proven tripod & bipod sets</li>
+            <li>OPUS & point cloud QA templates</li>
+          </ul>
+          <footer>Capture a gear flat lay to drop in above.</footer>
+        </article>
+
+        <article class="tool-card hardware-card">
+          <div class="hardware-photo">Add Photo</div>
+          <h3>Rugged Compute + Storage</h3>
+          <p>
+            On-site processing stack for out-of-band communities. Syncs to cloud buckets when bandwidth catches up, keeping daily
+            edits versioned and redundant.
+          </p>
+          <ul class="hardware-specs">
+            <li>Ruggedized laptops with CUDA GPUs</li>
+            <li>Portable NAS & RAID storage</li>
+            <li>Cradlepoint + Starlink uplink options</li>
+          </ul>
+          <footer>Slot in a workstation shot to personalize this card.</footer>
+        </article>
+      </div>
+    </section>
+
+    <hr class="section-break" />
+
+    <section id="esri" class="page-section soft-panel esri-overview">
+      <h2>Esri Delivery Without Silos</h2>
+      <p class="section-intro">
+        Many partners still rely on ArcGIS Online, Enterprise, and ArcGIS Pro. We keep those environments in sync with our Mapbox and open-source workflows so no one has to choose between creativity and compliance.
+      </p>
+      <div class="toolkit-pillars">
+        <article>
+          <h3>Repeatable Projects</h3>
+          <p>ModelBuilder diagrams, Python toolboxes, and APRX templates ship with documentation and tests so staff can rerun complex analyses long after the engagement.</p>
+        </article>
+        <article>
+          <h3>Portal Governance</h3>
+          <p>We organize ArcGIS Online and Enterprise portals with lifecycle policies, ownership plans, and metadata standards that satisfy auditors while staying lightweight.</p>
+        </article>
+        <article>
+          <h3>Bridging Stacks</h3>
+          <p>Feature services and image layers synchronize with our containerized pipelines so any update instantly appears in Mapbox experiences, dashboards, or PDFs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section toolkit-grid-section esri-components">
+      <h2>Core ESRI Components We Support</h2>
+      <div class="toolkit-grid">
+        <article class="tool-card">
+          <div class="tool-icon">Pro</div>
+          <h3>ArcGIS Pro</h3>
+          <p>Production-grade APRX templates, task automation, and shared symbol libraries that stay versioned with your team.</p>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">Srv</div>
+          <h3>ArcGIS Enterprise</h3>
+          <p>High-availability portal builds, service publishing pipelines, and monitoring dashboards aligned with IT governance.</p>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">OL</div>
+          <h3>ArcGIS Online</h3>
+          <p>Hosted layers, view configurations, and Hub sites paired with lifecycle policies so the public always sees authoritative data.</p>
+        </article>
+
+        <article class="tool-card">
+          <div class="tool-icon">XP</div>
+          <h3>StoryMaps & Experience Builder</h3>
+          <p>Executive dashboards, field briefings, and narratives wired to the same services that power internal analysis.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section toolkit-grid-section esri-integration">
+      <h2>Integration Playbooks</h2>
+      <div class="hardware-grid">
+        <article class="tool-card hardware-card">
+          <h3>ArcPy + Notebooks</h3>
+          <p>Notebook Server runtimes mirror our container stack so the same scripts run on-prem, in the cloud, or in a local dev environment. Schedules, logging, and dependency files live beside the code.</p>
+        </article>
+
+        <article class="tool-card hardware-card">
+          <h3>Data Interchange</h3>
+          <p>Versioned ETL using Data Interoperability and FME keeps authoritative layers synchronized with open data portals, Mapbox tilesets, and internal systems without duplicating effort.</p>
+        </article>
+
+        <article class="tool-card hardware-card">
+          <h3>Stakeholder Experiences</h3>
+          <p>Experience Builder apps, dashboards, and mobile maps are tested with real users before handoff so decision-makers can act immediately.</p>
+        </article>
+      </div>
+    </section>
+
+    <hr class="section-break" />
+
+    <section class="page-section soft-panel">
+      <h2>How We Deploy the Stack</h2>
+      <div class="toolkit-pillars">
+        <article>
+          <h3>Versioned Pipelines</h3>
+          <p>Every script lives in Git with pinned dependencies so partners can reproduce the exact same outputs months later.</p>
+        </article>
+        <article>
+          <h3>Shared Playbooks</h3>
+          <p>We hand over YAML/JSON configs plus checklist docs so internal GIS leads can rerun models without guesswork.</p>
+        </article>
+        <article>
+          <h3>Training & Transfer</h3>
+          <p>Screen shares, short videos, and office-hour style support make sure the tools stick with staff turnover.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+
+  <script src="/assets/js/load_partials.js"></script>
+  <script src="/assets/js/backgrounds.js"></script>
+  <script src="/assets/js/header_fade.js"></script>
+</body>
+</html>

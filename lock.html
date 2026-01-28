@@ -5,59 +5,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Protected | Ito Geospatial</title>
   <style>
-    body {
-      background-color: #121212;
-      color: #f5f5f5;
-      font-family: "Inter", sans-serif;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    :root {
+      color-scheme: light;
+      --navy-900: #203759;
+      --navy-700: #345680;
+      --navy-600: #3f6796;
+      --accent-primary: #a9cbff;
+      --accent-secondary: #d6e7ff;
+      --text-light: #f9fbff;
+      --text-muted: #5a6f93;
     }
 
-    h1 {
-      color: #3ddc97;
-      margin-bottom: 1rem;
+    body {
+      background: radial-gradient(circle at top, rgba(169, 203, 255, 0.4), transparent 55%),
+        linear-gradient(135deg, #f7faff, #e2ecff 60%, #d6e5ff);
+      color: var(--navy-900);
+      font-family: "Inter", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lock-card {
+      width: min(420px, 90vw);
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(32, 55, 89, 0.12);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 30px 60px rgba(32, 55, 89, 0.16);
+      text-align: center;
+      backdrop-filter: blur(12px);
+      z-index: 1;
+    }
+
+    .lock-card h1 {
+      color: var(--accent-primary);
+      margin: 0 0 0.5rem;
+    }
+
+    .lock-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
     }
 
     input {
-      padding: 0.6rem 1rem;
-      border-radius: 8px;
-      border: none;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(32, 55, 89, 0.12);
+      background: rgba(247, 250, 255, 0.6);
+      color: var(--navy-900);
       font-size: 1rem;
       margin-bottom: 1rem;
       outline: none;
       text-align: center;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    input:focus {
+      border-color: var(--accent-secondary);
+      background: rgba(214, 227, 255, 0.6);
     }
 
     button {
-      background: #3ddc97;
-      color: #121212;
+      width: 100%;
+      background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+      color: var(--navy-900);
       border: none;
-      border-radius: 8px;
-      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      padding: 0.75rem 1.2rem;
       cursor: pointer;
       font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
     button:hover {
-      background: #2ab97a;
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    .lock-card small {
+      display: block;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      font-size: 0.85rem;
     }
 
     .error {
-      color: #ff6961;
+      color: #ff8a85;
       margin-top: 1rem;
       font-size: 0.9rem;
+      min-height: 1.2rem;
+    }
+
+    .lock-accent {
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(169, 203, 255, 0.45), transparent 65%);
+      filter: blur(40px);
+      top: -120px;
+      right: -80px;
+      opacity: 0.7;
     }
   </style>
 </head>
 <body>
-  <h1>Ito Geospatial</h1>
-  <p>Enter password to access site:</p>
-  <input type="password" id="passwordInput" placeholder="Password" />
-  <button id="submitPassword" type="button">Enter</button>
-  <div id="error" class="error"></div>
+  <div class="lock-card">
+    <h1>Ito Geospatial</h1>
+    <p>Enter password to access the private preview.</p>
+    <input type="password" id="passwordInput" placeholder="Password" />
+    <button id="submitPassword" type="button">Enter</button>
+    <div id="error" class="error"></div>
+    <small>Questions? Reach out to itogeospatial@gmail.com</small>
+  </div>
+  <div class="lock-accent" aria-hidden="true"></div>
 
   <script>
     const PASSWORD = "ito2025";

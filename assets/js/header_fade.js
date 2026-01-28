@@ -1,10 +1,10 @@
-const MAX_FADE = 0.6;
+const MAX_FADE = 0.8;
 
 const updateNavBackground = (nav) => {
   if (!nav) return;
   const scrollY = window.scrollY;
   const opacity = Math.max(1 - scrollY / 400, MAX_FADE);
-  nav.style.background = `rgba(18, 18, 18, ${opacity})`;
+  nav.style.background = `rgba(255, 255, 255, ${opacity})`;
 };
 
 const initNavInteractions = () => {
@@ -17,7 +17,7 @@ const initNavInteractions = () => {
   updateNavBackground(nav);
 
   nav.addEventListener("mouseenter", () => {
-    nav.style.background = "rgba(18, 18, 18, 0.95)";
+    nav.style.background = "rgba(255, 255, 255, 0.98)";
   });
 
   nav.addEventListener("mouseleave", () => {
