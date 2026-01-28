@@ -1,4 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Subtle animation for hero backgrounds */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 :root {
   --navy-900: #162c4d;
@@ -259,10 +277,15 @@ nav ul li {
   justify-content: flex-start;
 }
 
+.hero-content {
+  animation: fadeInUp 0.8s ease-out;
+}
+
 .hero-content h1 {
   font-size: 2.8rem;
   margin-bottom: 1rem;
   color: var(--navy-900);
+  letter-spacing: -0.02em;
 }
 
 .hero-content p {
@@ -277,18 +300,21 @@ nav ul li {
 .btn {
   background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
   color: var(--navy-900);
-  padding: 0.8rem 1.6rem;
+  padding: 0.85rem 1.75rem;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.2s ease;
+  transition: all 0.25s ease;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 4px 14px rgba(127, 177, 255, 0.25);
 }
 
 .btn:hover {
   background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(127, 177, 255, 0.35);
 }
 
 .btn.btn-outline {
@@ -341,6 +367,104 @@ nav ul li {
   line-height: 1.7;
   font-size: 1rem;
   text-align: center;
+}
+
+/* WHY ITO SECTION */
+.why-ito-section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.why-ito-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.why-ito-card {
+  background: var(--surface-card);
+  border: 1px solid rgba(32, 55, 89, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.why-ito-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(32, 55, 89, 0.15);
+}
+
+.why-ito-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: var(--navy-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.why-ito-card h3 {
+  color: var(--navy-900);
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+.why-ito-card p {
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* TEAM PREVIEW SECTION */
+.team-preview-section {
+  background: linear-gradient(135deg, rgba(22, 44, 77, 0.04), rgba(188, 213, 255, 0.2));
+  padding: 4rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(32, 55, 89, 0.06);
+  border-bottom: 1px solid rgba(32, 55, 89, 0.06);
+}
+
+.team-preview-section h2 {
+  color: var(--navy-900);
+  margin-bottom: 0.75rem;
+}
+
+.team-preview-section .section-intro {
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+
+.team-preview-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.team-preview-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
 }
 
 /* ABOUT SECTION ON HOME PAGE */
