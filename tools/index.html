@@ -51,7 +51,7 @@
     }
     .tool-embed-container iframe {
       width: 100%;
-      height: 700px;
+      height: 850px;
       border: none;
       display: block;
     }
@@ -86,56 +86,77 @@
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .more-tools-section {
-      background: linear-gradient(135deg, rgba(22, 44, 77, 0.04), rgba(188, 213, 255, 0.15));
+    /* Project case study styles */
+    .project-showcase {
       padding: 3rem 2rem;
-      text-align: center;
-      border-top: 1px solid rgba(32, 55, 89, 0.06);
-    }
-    .more-tools-section h2 {
-      color: var(--navy-900);
-      margin-bottom: 0.75rem;
-    }
-    .more-tools-section > p {
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-    .coming-soon-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
+      border-top: 1px solid rgba(32, 55, 89, 0.08);
     }
-    .coming-soon-card {
-      background: var(--surface-card);
-      border: 1px solid rgba(32, 55, 89, 0.08);
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: left;
-      opacity: 0.7;
+    .project-showcase-header {
+      text-align: center;
+      margin-bottom: 2rem;
     }
-    .coming-soon-card h4 {
-      color: var(--navy-800);
-      margin: 0 0 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    .project-showcase-header h2 {
+      color: var(--navy-900);
+      margin-bottom: 0.5rem;
     }
-    .coming-soon-card h4::after {
-      content: "Coming Soon";
-      font-size: 0.65rem;
-      background: rgba(32, 55, 89, 0.1);
-      padding: 0.2rem 0.5rem;
-      border-radius: 10px;
-      font-weight: 600;
-      color: var(--navy-600);
-    }
-    .coming-soon-card p {
+    .project-showcase-header p {
       color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .project-details {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .project-details {
+        grid-template-columns: 1fr;
+      }
+    }
+    .project-info h3 {
+      color: var(--navy-900);
+      margin: 0 0 1rem;
+    }
+    .project-info p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .project-info ul {
+      list-style: none;
+      padding: 0;
       margin: 0;
-      font-size: 0.9rem;
+    }
+    .project-info li {
+      color: var(--text-muted);
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      line-height: 1.5;
+    }
+    .project-info li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent-primary);
+    }
+    .project-map-embed {
+      background: var(--surface-card);
+      border: 1px solid rgba(32, 55, 89, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(32, 55, 89, 0.1);
+    }
+    .project-map-embed iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      display: block;
     }
   </style>
 </head>
@@ -203,24 +224,35 @@
       </div>
     </section>
 
-    <!-- MORE TOOLS COMING -->
-    <section class="more-tools-section">
-      <h2>More Tools in Development</h2>
-      <p>
-        We're actively building more free tools to help small teams tackle common geospatial challenges.
-      </p>
-      <div class="coming-soon-grid">
-        <div class="coming-soon-card">
-          <h4>Parcel Lookup</h4>
-          <p>Quick property information and ownership data from public records across multiple states.</p>
+    <!-- MONTANA AIRPORT ECONOMIC STUDY -->
+    <section class="project-showcase">
+      <div class="project-showcase-header">
+        <h2>Featured Project</h2>
+        <p>
+          An example of the kind of work we do—translating complex data into accessible, shareable stories.
+        </p>
+      </div>
+      <div class="project-details">
+        <div class="project-info">
+          <h3>Montana Airport Economic Impact Study</h3>
+          <p>
+            In partnership with Zenith Economics and the MSU Geospatial Core Facility, we mapped the economic contributions of
+            airports across Montana. This StoryMap blends survey data, aviation infrastructure, and regional workforce trends to
+            keep legislators and funding partners aligned.
+          </p>
+          <ul>
+            <li>Statewide airport inventory tied to passenger counts and capital investments</li>
+            <li>Economic impact rollups that translate spatial analysis into policy-ready briefs</li>
+            <li>ArcGIS StoryMap delivery so rural and urban stakeholders share the same narrative</li>
+          </ul>
         </div>
-        <div class="coming-soon-card">
-          <h4>Elevation Profiler</h4>
-          <p>Draw a line on a map and get elevation profiles with slope analysis for planning and assessment.</p>
-        </div>
-        <div class="coming-soon-card">
-          <h4>Coordinate Converter</h4>
-          <p>Batch convert between coordinate systems, datums, and formats without expensive software.</p>
+        <div class="project-map-embed">
+          <iframe
+            src="https://storymaps.arcgis.com/stories/534906760ca243e0b4aee889878dd74f"
+            title="Montana Airport Economic Impact StoryMap"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
     </section>
