@@ -107,25 +107,6 @@
       "hidden": false
     },
     {
-      "id": "site-unseen",
-      "name": "Site Unseen",
-      "kind": "open",
-      "tagline": "Watchdog tool tracking predatory data center siting near tribal lands.",
-      "description": "Tribal boundary processing, a dual score for corporate attractiveness and community vulnerability, a hyperscaler subsidiary tracker, a FERC interconnection queue monitor, and an LLC resolver.",
-      "partner": "Honor the Earth and the No Data Center Coalition",
-      "status": "Open source",
-      "year": 2026,
-      "live": null,
-      "repo": "https://github.com/itogeo/site-unseen",
-      "stack": [
-        "Python",
-        "FERC data",
-        "Entity resolution"
-      ],
-      "featured": true,
-      "hidden": false
-    },
-    {
       "id": "roadside",
       "name": "Roadside",
       "kind": "open",
@@ -141,45 +122,6 @@
         "MapLibre",
         "PMTiles",
         "GitHub Pages"
-      ],
-      "featured": true,
-      "hidden": false
-    },
-    {
-      "id": "rivernight",
-      "name": "River Night",
-      "kind": "open",
-      "tagline": "Offline river guide for the Selway, Middle Fork, and Main Salmon.",
-      "description": "A PWA that works without cell service: live USGS gauges, NOAA flow forecasts, and GPS-to-river-mile along the real channel.",
-      "partner": null,
-      "status": "Live",
-      "year": 2026,
-      "live": "https://rivernight.itogeospatial.com",
-      "repo": "https://github.com/itogeo/rivernight",
-      "stack": [
-        "Leaflet",
-        "PWA",
-        "USGS",
-        "Python"
-      ],
-      "featured": true,
-      "hidden": false
-    },
-    {
-      "id": "mtpublic",
-      "name": "MT Public Access",
-      "kind": "open",
-      "tagline": "Where county road easements may open up landlocked public land.",
-      "description": "Buffers every Montana county road by its 30 ft statutory half-width and finds where it touches BLM, USFS, and state trust land. Ranked statewide.",
-      "partner": null,
-      "status": "Open source",
-      "year": 2026,
-      "live": null,
-      "repo": "https://github.com/itogeo/mtpublic",
-      "stack": [
-        "Python",
-        "MSDI",
-        "Cadastral"
       ],
       "featured": true,
       "hidden": false
@@ -203,25 +145,6 @@
       "hidden": false
     },
     {
-      "id": "recgovme",
-      "name": "recgov.me",
-      "kind": "open",
-      "tagline": "Cancellation alerts for Alaska Forest Service cabins.",
-      "description": "Pick a cabin and dates, get an email when one opens. Runs entirely on free tiers.",
-      "partner": null,
-      "status": "Open source",
-      "year": 2026,
-      "live": null,
-      "repo": "https://github.com/itogeo/recgovme",
-      "stack": [
-        "TypeScript",
-        "Cloudflare Workers",
-        "Supabase"
-      ],
-      "featured": false,
-      "hidden": false
-    },
-    {
       "id": "mapdigitizer",
       "name": "Map Digitizer",
       "kind": "open",
@@ -235,24 +158,6 @@
       "stack": [
         "Python",
         "Computer vision"
-      ],
-      "featured": false,
-      "hidden": false
-    },
-    {
-      "id": "yellowstone-waterways",
-      "name": "Yellowstone Paddling Inventory",
-      "kind": "open",
-      "tagline": "Every waterway in Yellowstone, classified by paddling access.",
-      "description": "A live, queryable rebuild of the park's printed river paddling inventory map.",
-      "partner": null,
-      "status": "In progress",
-      "year": 2026,
-      "live": null,
-      "repo": "https://github.com/itogeo/yellowstone-waterways",
-      "stack": [
-        "Python",
-        "OpenStreetMap"
       ],
       "featured": false,
       "hidden": false
