@@ -9,7 +9,7 @@ marker comments in two pages:
                           <!-- PORTFOLIO:START --> ... <!-- PORTFOLIO:END -->
 
 A project with a "spotlight" block gets a large section with its live site
-embedded as an inset. Spotlights appear on the projects page; set
+embedded as an inset, rendered at desktop size (1280x800) and scaled down to fit. Spotlights appear on the projects page; set
 "home": false inside a spotlight to keep it off the homepage. The inset ignores scrolling until clicked, so it never
 hijacks the page.
 
@@ -78,8 +78,6 @@ def load() -> list[dict]:
         if sp:
             if not str(sp.get("embed", "")).startswith("https://"):
                 errors.append(f"{where}: spotlight.embed must start with https://")
-            if not 0.4 <= float(sp.get("scale", 1)) <= 1:
-                errors.append(f"{where}: spotlight.scale must be between 0.4 and 1")
             if not sp.get("points"):
                 errors.append(f"{where}: spotlight needs a list of points")
         for key in ("live", "repo"):
@@ -131,10 +129,24 @@ def card(p: dict, full: bool) -> str:
 
 
 INSET_SCRIPT = """<script>
+(function () {
+  // Each inset renders its site at desktop size (1280x800) and shrinks it to fit.
+  var frames = document.querySelectorAll('.sp-frame');
+  function fit() {
+    frames.forEach(function (f) { f.style.setProperty('--sp-fit', f.clientWidth / 1280); });
+  }
+  fit();
+  window.addEventListener('resize', fit);
+  if (window.ResizeObserver) { var ro = new ResizeObserver(fit); frames.forEach(function (f) { ro.observe(f); }); }
+})();
 document.querySelectorAll('.sp-inset').forEach(function (inset) {
   var btn = inset.querySelector('.sp-activate');
   if (!btn) return;
-  btn.addEventListener('click', function () { inset.classList.add('is-live'); });
+  btn.addEventListener('click', function () {
+    // Too small to use in place on a phone: open the real site instead.
+    if (inset.clientWidth < 560) { var link = inset.querySelector('figcaption a'); if (link) window.open(link.href, '_blank', 'noopener'); return; }
+    inset.classList.add('is-live');
+  });
   inset.addEventListener('mouseleave', function () { inset.classList.remove('is-live'); });
 });
 </script>"""
@@ -161,8 +173,6 @@ def spotlight(p: dict, index: int) -> str:
             f'target="_blank" rel="noopener">Code on GitHub ↗</a>'
         )
     flip = " sp--flip" if index % 2 else ""
-    scale = float(sp.get("scale", 1))
-    frame_style = f' style="--sp-scale: {scale}"' if scale != 1 else ""
     return f"""<section class="sp{flip}" id="spotlight-{escape(p['id'])}">
 <div class="sp-text">
 <h2 class="sp-name">{escape(p['name'])}</h2>
@@ -171,7 +181,7 @@ def spotlight(p: dict, index: int) -> str:
 <div class="sp-actions">{''.join(buttons)}</div>
 </div>
 <figure class="sp-inset">
-<div class="sp-frame"{frame_style}>
+<div class="sp-frame">
 <iframe src="{escape(sp['embed'])}" title="{escape(p['name'])} live map" loading="lazy" allow="fullscreen"></iframe>
 <button class="sp-activate" type="button" aria-label="Use the {escape(p['name'])} map"></button>
 </div>

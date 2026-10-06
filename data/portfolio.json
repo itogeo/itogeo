@@ -1,5 +1,5 @@
 {
-  "_readme": "Every project on the site lives here. Edit this file, then run: python scripts/build_portfolio.py. kind = client | product | open. spotlight = a large homepage section with the live site embedded. featured: true puts a card in the homepage 'Selected work' grid (max 6, spotlights excluded). hidden: true keeps an entry here without publishing it. live / repo can be null. spotlight.scale (0.4–1) renders the inset at desktop size and shrinks it, for sites that need a wide screen.",
+  "_readme": "Every project on the site lives here. Edit this file, then run: python scripts/build_portfolio.py. kind = client | product | open. spotlight = a large homepage section with the live site embedded. featured: true puts a card in the homepage 'Selected work' grid (max 6, spotlights excluded). hidden: true keeps an entry here without publishing it. live / repo can be null.",
   "projects": [
     {
       "id": "snowline",
@@ -65,8 +65,7 @@
         "cta": {
           "label": "Ask about a data feed",
           "href": "mailto:itogeospatial@gmail.com?subject=Data4MT%20data%20feed"
-        },
-        "scale": 0.55
+        }
       }
     },
     {

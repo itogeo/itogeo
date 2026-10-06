@@ -76,7 +76,7 @@
 <div class="sp-actions"><a class="btn" href="mailto:itogeospatial@gmail.com?subject=Data4MT%20data%20feed">Ask about a data feed</a><a class="btn btn-outline" href="https://data4mt.itogeospatial.com" target="_blank" rel="noopener">Open the map ↗</a></div>
 </div>
 <figure class="sp-inset">
-<div class="sp-frame" style="--sp-scale: 0.55">
+<div class="sp-frame">
 <iframe src="https://data4mt.itogeospatial.com" title="Data4MT live map" loading="lazy" allow="fullscreen"></iframe>
 <button class="sp-activate" type="button" aria-label="Use the Data4MT map"></button>
 </div>
@@ -85,10 +85,24 @@
 </section>
 </div>
 <script>
+(function () {
+  // Each inset renders its site at desktop size (1280x800) and shrinks it to fit.
+  var frames = document.querySelectorAll('.sp-frame');
+  function fit() {
+    frames.forEach(function (f) { f.style.setProperty('--sp-fit', f.clientWidth / 1280); });
+  }
+  fit();
+  window.addEventListener('resize', fit);
+  if (window.ResizeObserver) { var ro = new ResizeObserver(fit); frames.forEach(function (f) { ro.observe(f); }); }
+})();
 document.querySelectorAll('.sp-inset').forEach(function (inset) {
   var btn = inset.querySelector('.sp-activate');
   if (!btn) return;
-  btn.addEventListener('click', function () { inset.classList.add('is-live'); });
+  btn.addEventListener('click', function () {
+    // Too small to use in place on a phone: open the real site instead.
+    if (inset.clientWidth < 560) { var link = inset.querySelector('figcaption a'); if (link) window.open(link.href, '_blank', 'noopener'); return; }
+    inset.classList.add('is-live');
+  });
   inset.addEventListener('mouseleave', function () { inset.classList.remove('is-live'); });
 });
 </script>
