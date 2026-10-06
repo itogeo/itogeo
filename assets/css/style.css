@@ -210,12 +210,12 @@ nav ul li {
 /* HERO SECTION */
 /* ---------------------------- */
 .hero {
-  min-height: 38vh;
+  min-height: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 5rem 2rem 3rem;
+  padding: 6.5rem 2rem 2.75rem;
   color: var(--navy-900);
   position: relative;
   background: linear-gradient(125deg, rgba(22, 44, 77, 0.12), rgba(188, 213, 255, 0.65));
@@ -231,8 +231,8 @@ nav ul li {
   inset: 0;
   background: linear-gradient(
       120deg,
-      rgba(246, 248, 255, 0.84),
-      rgba(188, 213, 255, 0.72)
+      rgba(246, 248, 255, 0.74),
+      rgba(188, 213, 255, 0.6)
     );
   pointer-events: none;
   transition: opacity 0.4s ease;
@@ -254,8 +254,8 @@ nav ul li {
 .hero.hero-image-ready::before {
   background: linear-gradient(
       120deg,
-      rgba(242, 246, 255, 0.88),
-      rgba(214, 225, 255, 0.76)
+      rgba(242, 246, 255, 0.78),
+      rgba(214, 225, 255, 0.62)
     );
 }
 
@@ -283,14 +283,14 @@ nav ul li {
 
 .hero-content h1 {
   font-size: 2.8rem;
-  margin-bottom: 1rem;
+  margin: 0 0 0.6rem;
   color: var(--navy-900);
   letter-spacing: -0.02em;
 }
 
 .hero-content p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin: 0 auto 1.4rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -1371,8 +1371,8 @@ footer a:hover {
   }
 
   .hero {
-    min-height: 56vh;
-    padding: 5rem 1.5rem 3rem;
+    min-height: 0;
+    padding: 6rem 1.5rem 2.25rem;
   }
 
   .page-section {
@@ -1572,3 +1572,23 @@ footer a:hover {
 .contact-simple p { color: var(--text-muted); max-width: 640px; margin: 0 0 1.25rem; }
 .contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; }
 .contact-address { color: var(--text-muted); font-size: 0.92rem; }
+
+/* Logo: satellite does one lap of the orbit on load */
+.logo-mark { position: relative; display: block; width: 45.64px; height: 36px; flex: none; }
+.logo .logo-mark img.logo-base { height: 36px; width: auto; }
+.logo .logo-mark img.logo-sat {
+  position: absolute; left: 0; top: 0;
+  width: 14.74px; height: auto;
+  offset-path: path("M 35.29 9.71 A 22.67 11.97 12.9 0 0 10.59 25.96 A 22.67 11.97 12.9 0 0 35.29 9.71");
+  offset-anchor: 6.15px 9.71px;
+  offset-rotate: 0deg;
+  offset-distance: 0%;
+  animation: ito-orbit 2.2s cubic-bezier(0.45, 0.05, 0.25, 1) 0.35s both;
+}
+@keyframes ito-orbit { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+@supports not (offset-path: path("M 0 0")) {
+  .logo .logo-mark img.logo-sat { left: 29.14px; top: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo .logo-mark img.logo-sat { animation: none; }
+}

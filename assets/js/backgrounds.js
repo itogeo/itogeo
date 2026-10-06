@@ -5,7 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
     "ocean_land.jpg",
     "river_town.jpg",
     "yk_delta.jpg",
-    "bridgers.jpg"
+    "bridgers.jpg",
+    // NASA Earth Observatory / Landsat (public domain) — see data/backgroundimages/CREDITS.md
+    "mt_golden_triangle.jpg",
+    "mt_glacier_np.jpg",
+    "mt_beartooths.jpg",
+    "wy_tetons.jpg",
+    "wy_bighorn_basin.jpg"
   ];
 
   const hero = document.querySelector(".dynamic-bg");
