@@ -115,35 +115,33 @@
 <div class="sp-wrap">
 <section class="sp" id="spotlight-snowline">
 <div class="sp-text">
-<div class="pf-meta"><span class="pf-kind pf-kind--product">Product</span><span class="pf-status">Live · open source Oct 10</span></div>
 <h2 class="sp-name">Snowline</h2>
 <p class="sp-headline">Where the snow is today, from space.</p>
 <ul class="sp-points"><li>Daily snow extent from Sentinel-2 and Landsat</li><li>Every SNOTEL station, compared against its 20-year median</li><li>Webcams alongside the satellite view</li><li>Free, and open source from October 10</li></ul>
 <div class="sp-actions"><a class="btn" href="https://snowline.itogeospatial.com" target="_blank" rel="noopener">Open Snowline</a></div>
 </div>
-<div class="sp-inset">
-<div class="sp-bar"><span></span><span></span><span></span><a href="https://snowline.itogeospatial.com" target="_blank" rel="noopener">snowline.itogeospatial.com</a></div>
+<figure class="sp-inset">
 <div class="sp-frame">
 <iframe src="https://snowline.itogeospatial.com" title="Snowline live map" loading="lazy" allow="fullscreen"></iframe>
-<button class="sp-activate" type="button">Click to explore the live map</button>
+<button class="sp-activate" type="button" aria-label="Use the Snowline map"></button>
 </div>
-</div>
+<figcaption><a href="https://snowline.itogeospatial.com" target="_blank" rel="noopener">snowline.itogeospatial.com ↗</a><span>Live — click the map to pan and zoom</span></figcaption>
+</figure>
 </section>
 <section class="sp sp--flip" id="spotlight-data4mt">
 <div class="sp-text">
-<div class="pf-meta"><span class="pf-kind pf-kind--product">Product</span><span class="pf-status">Live · taking subscribers</span></div>
 <h2 class="sp-name">Data4MT</h2>
 <p class="sp-headline">Montana&#x27;s public records, in one map.</p>
 <ul class="sp-points"><li>Parcels and ownership statewide</li><li>Building, septic, and environmental permits</li><li>2,779 conservation easements, zoning, FEMA flood, and water rights</li><li>A 2016–2025 change explorer for subdivisions and sales</li></ul>
 <div class="sp-actions"><a class="btn" href="mailto:itogeospatial@gmail.com?subject=Data4MT%20data%20feed">Ask about a data feed</a><a class="btn btn-outline" href="https://data4mt.itogeospatial.com" target="_blank" rel="noopener">Open the map ↗</a></div>
 </div>
-<div class="sp-inset">
-<div class="sp-bar"><span></span><span></span><span></span><a href="https://data4mt.itogeospatial.com" target="_blank" rel="noopener">data4mt.itogeospatial.com</a></div>
+<figure class="sp-inset">
 <div class="sp-frame" style="--sp-scale: 0.55">
 <iframe src="https://data4mt.itogeospatial.com" title="Data4MT live map" loading="lazy" allow="fullscreen"></iframe>
-<button class="sp-activate" type="button">Click to explore the live map</button>
+<button class="sp-activate" type="button" aria-label="Use the Data4MT map"></button>
 </div>
-</div>
+<figcaption><a href="https://data4mt.itogeospatial.com" target="_blank" rel="noopener">data4mt.itogeospatial.com ↗</a><span>Live — click the map to pan and zoom</span></figcaption>
+</figure>
 </section>
 </div>
 <script>
@@ -161,10 +159,6 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 <p class="pf-summary">13 projects · 9 live · 9 with public code &nbsp;|&nbsp; <a href="#client-work">Client work</a> · <a href="#product-work">Products</a> · <a href="#open-work">Open source & free tools</a></p>
 <div class="pf-group" id="client-work"><div class="pf-heading"><h2>Client work</h2></div><p class="pf-blurb">Maps and analysis built with partners.</p><div class="pf-grid">
 <article class="pf-card" id="gallatin-continuity">
-<div class="pf-meta">
-<span class="pf-kind pf-kind--client">Client</span>
-<span class="pf-status">Live</span>
-</div>
 <h3>Gallatin Continuity</h3>
 <p class="pf-partner">With Gallatin Watershed Council</p>
 <p class="pf-tagline">Habitat and hydrologic continuity across the Gallatin Valley.</p>
@@ -173,10 +167,6 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 <div class="pf-links"><a class="pf-link pf-link--live" href="https://gwc.itogeospatial.com" target="_blank" rel="noopener">Live site ↗</a><a class="pf-link" href="https://github.com/itogeo/gallatin_continuity" target="_blank" rel="noopener">Code on GitHub ↗</a></div>
 </article>
 <article class="pf-card" id="mt-airports">
-<div class="pf-meta">
-<span class="pf-kind pf-kind--client">Client</span>
-<span class="pf-status">Live</span>
-</div>
 <h3>Montana Airport Economic Impact</h3>
 <p class="pf-partner">With Zenith Economics and the MSU Geospatial Core Facility</p>
 <p class="pf-tagline">Statewide airport economics — passengers, capital investment, workforce.</p>
@@ -187,10 +177,7 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 </div></div>
 <div class="pf-group" id="product-work"><div class="pf-heading"><h2>Products</h2></div><p class="pf-blurb">Things I build and run myself.</p><div class="pf-grid">
 <article class="pf-card" id="snowline">
-<div class="pf-meta">
-<span class="pf-kind pf-kind--product">Product</span>
-<span class="pf-status">Live · open source Oct 10</span>
-</div>
+<p class="pf-meta">Open source from Oct 10</p>
 <h3>Snowline</h3>
 <p class="pf-tagline">Daily Montana snow cover from Sentinel-2, Landsat, and SNOTEL.</p>
 <p class="pf-desc">Satellite snow extent fused with SNOTEL depth and webcams for southwest Montana, updated daily. The first piece of the Line Network — RiverLine and SkyLine are next.</p>
@@ -198,10 +185,7 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 <div class="pf-links"><a class="pf-link pf-link--live" href="https://snowline.itogeospatial.com" target="_blank" rel="noopener">Live site ↗</a></div>
 </article>
 <article class="pf-card" id="data4mt">
-<div class="pf-meta">
-<span class="pf-kind pf-kind--product">Product</span>
-<span class="pf-status">Live · taking subscribers</span>
-</div>
+<p class="pf-meta">Data feeds available</p>
 <h3>Data4MT</h3>
 <p class="pf-tagline">Montana&#x27;s parcel, permit, and zoning records in one statewide map.</p>
 <p class="pf-desc">Parcels and ownership, building and septic permits, 2,779 conservation easements, zoning, FEMA flood, water rights, and a 2016–2025 change explorer. Available as a data feed for Montana businesses.</p>
@@ -211,9 +195,6 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 </div></div>
 <div class="pf-group" id="open-work"><div class="pf-heading"><h2>Open source & free tools</h2></div><p class="pf-blurb">Free to use, fork, and improve.</p><div class="pf-grid">
 <article class="pf-card" id="site-unseen">
-<div class="pf-meta">
-<span class="pf-kind pf-kind--open">Open source</span>
-</div>
 <h3>Site Unseen</h3>
 <p class="pf-partner">With Honor the Earth and the No Data Center Coalition</p>
 <p class="pf-tagline">Watchdog tool tracking predatory data center siting near tribal lands.</p>
@@ -222,10 +203,6 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 <div class="pf-links"><a class="pf-link" href="https://github.com/itogeo/site-unseen" target="_blank" rel="noopener">Code on GitHub ↗</a></div>
 </article>
 <article class="pf-card" id="roadside">
-<div class="pf-meta">
-<span class="pf-kind pf-kind--open">Open source</span>
-<span class="pf-status">Live</span>
-</div>
 <h3>Roadside</h3>
 <p class="pf-tagline">Read Montana and Idaho highway markers without pulling over.</p>
 <p class="pf-desc">673 official historical and geologic markers with sign text and photos, as open data. Exports to GPX, KML, and Wikidata. No server, no API keys.</p>
@@ -233,10 +210,6 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 <div class="pf-links"><a class="pf-link pf-link--live" href="https://itogeo.github.io/roadside/" target="_blank" rel="noopener">Live site ↗</a><a class="pf-link" href="https://github.com/itogeo/roadside" target="_blank" rel="noopener">Code on GitHub ↗</a></div>
 </article>
 <article class="pf-card" id="rivernight">
-<div class="pf-meta">
-<span class="pf-kind pf-kind--open">Open source</span>
-<span class="pf-status">Live</span>
-</div>
 <h3>River Night</h3>
 <p class="pf-tagline">Offline river guide for the Selway, Middle Fork, and Main Salmon.</p>
 <p class="pf-desc">A PWA that works without cell service: live USGS gauges, NOAA flow forecasts, and GPS-to-river-mile along the real channel.</p>
@@ -244,9 +217,6 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 <div class="pf-links"><a class="pf-link pf-link--live" href="https://rivernight.itogeospatial.com" target="_blank" rel="noopener">Live site ↗</a><a class="pf-link" href="https://github.com/itogeo/rivernight" target="_blank" rel="noopener">Code on GitHub ↗</a></div>
 </article>
 <article class="pf-card" id="mtpublic">
-<div class="pf-meta">
-<span class="pf-kind pf-kind--open">Open source</span>
-</div>
 <h3>MT Public Access</h3>
 <p class="pf-tagline">Where county road easements may open up landlocked public land.</p>
 <p class="pf-desc">Buffers every Montana county road by its 30 ft statutory half-width and finds where it touches BLM, USFS, and state trust land. Ranked statewide.</p>
@@ -254,10 +224,6 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 <div class="pf-links"><a class="pf-link" href="https://github.com/itogeo/mtpublic" target="_blank" rel="noopener">Code on GitHub ↗</a></div>
 </article>
 <article class="pf-card" id="permit-alerts">
-<div class="pf-meta">
-<span class="pf-kind pf-kind--open">Open source</span>
-<span class="pf-status">Live</span>
-</div>
 <h3>Salmon River Permit Alerts</h3>
 <p class="pf-tagline">An email when a Four Rivers permit date opens up.</p>
 <p class="pf-desc">Watches Recreation.gov for cancellations on the Middle Fork, Main Salmon, and Selway.</p>
@@ -265,9 +231,6 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 <div class="pf-links"><a class="pf-link pf-link--live" href="https://itogeospatial.com/tools/" target="_blank" rel="noopener">Live site ↗</a><a class="pf-link" href="https://github.com/itogeo/rivertime" target="_blank" rel="noopener">Code on GitHub ↗</a></div>
 </article>
 <article class="pf-card" id="recgovme">
-<div class="pf-meta">
-<span class="pf-kind pf-kind--open">Open source</span>
-</div>
 <h3>recgov.me</h3>
 <p class="pf-tagline">Cancellation alerts for Alaska Forest Service cabins.</p>
 <p class="pf-desc">Pick a cabin and dates, get an email when one opens. Runs entirely on free tiers.</p>
@@ -275,10 +238,7 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 <div class="pf-links"><a class="pf-link" href="https://github.com/itogeo/recgovme" target="_blank" rel="noopener">Code on GitHub ↗</a></div>
 </article>
 <article class="pf-card" id="mapdigitizer">
-<div class="pf-meta">
-<span class="pf-kind pf-kind--open">Open source</span>
-<span class="pf-status">Beta</span>
-</div>
+<p class="pf-meta">Beta</p>
 <h3>Map Digitizer</h3>
 <p class="pf-tagline">Turn a screenshot of a zoning map into GeoJSON, Shapefile, or KML.</p>
 <p class="pf-desc">Georeferences and vectorizes planning maps from PDFs or images. Beta.</p>
@@ -286,10 +246,7 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 <div class="pf-links"><a class="pf-link pf-link--live" href="https://mapdigitizer.onrender.com/" target="_blank" rel="noopener">Live site ↗</a></div>
 </article>
 <article class="pf-card" id="yellowstone-waterways">
-<div class="pf-meta">
-<span class="pf-kind pf-kind--open">Open source</span>
-<span class="pf-status">In progress</span>
-</div>
+<p class="pf-meta">In progress</p>
 <h3>Yellowstone Paddling Inventory</h3>
 <p class="pf-tagline">Every waterway in Yellowstone, classified by paddling access.</p>
 <p class="pf-desc">A live, queryable rebuild of the park&#x27;s printed river paddling inventory map.</p>
@@ -297,10 +254,6 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 <div class="pf-links"><a class="pf-link" href="https://github.com/itogeo/yellowstone-waterways" target="_blank" rel="noopener">Code on GitHub ↗</a></div>
 </article>
 <article class="pf-card" id="churchhouse-rules">
-<div class="pf-meta">
-<span class="pf-kind pf-kind--open">Open source</span>
-<span class="pf-status">Live</span>
-</div>
 <h3>Churchhouse Rule$</h3>
 <p class="pf-tagline">Every game we play, written down.</p>
 <p class="pf-desc">A rulebook friends can edit straight from the site. Every save is a commit.</p>

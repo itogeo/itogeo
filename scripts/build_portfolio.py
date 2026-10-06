@@ -38,7 +38,18 @@ KINDS = {
     "product": ("Products", "Things I build and run myself."),
     "open": ("Open source & free tools", "Free to use, fork, and improve."),
 }
-KIND_LABEL = {"client": "Client", "product": "Product", "open": "Open source"}
+KIND_LABEL = {"client": "Client work", "product": "Product", "open": "Open source"}
+QUIET_STATUS = {"live", "open source"}  # already obvious from the buttons
+
+
+def meta_line(p: dict, with_kind: bool = True) -> str:
+    bits = [KIND_LABEL[p["kind"]]] if with_kind else []
+    status = (p.get("status") or "").strip()
+    if status and status.lower() not in QUIET_STATUS:
+        bits.append(status)
+    if not bits:
+        return ""
+    return f'<p class="pf-meta">{escape(" — ".join(bits))}</p>'
 REQUIRED = ("id", "name", "kind", "tagline")
 MAX_FEATURED = 6
 
@@ -100,12 +111,8 @@ def links(p: dict) -> str:
 def card(p: dict, full: bool) -> str:
     parts = [
         f'<article class="pf-card" id="{escape(p["id"])}">',
-        '<div class="pf-meta">',
-        f'<span class="pf-kind pf-kind--{p["kind"]}">{KIND_LABEL[p["kind"]]}</span>',
+        meta_line(p, with_kind=not full),
     ]
-    if p.get("status") and p["status"].lower() != KIND_LABEL[p["kind"]].lower():
-        parts.append(f'<span class="pf-status">{escape(p["status"])}</span>')
-    parts.append("</div>")
     parts.append(f'<h3>{escape(p["name"])}</h3>')
     if p.get("partner"):
         parts.append(f'<p class="pf-partner">With {escape(p["partner"])}</p>')
@@ -153,22 +160,20 @@ def spotlight(p: dict, index: int) -> str:
     flip = " sp--flip" if index % 2 else ""
     scale = float(sp.get("scale", 1))
     frame_style = f' style="--sp-scale: {scale}"' if scale != 1 else ""
-    status = f'<span class="pf-status">{escape(p["status"])}</span>' if p.get("status") else ""
     return f"""<section class="sp{flip}" id="spotlight-{escape(p['id'])}">
 <div class="sp-text">
-<div class="pf-meta"><span class="pf-kind pf-kind--{p['kind']}">{KIND_LABEL[p['kind']]}</span>{status}</div>
 <h2 class="sp-name">{escape(p['name'])}</h2>
 <p class="sp-headline">{escape(sp.get('headline') or p['tagline'])}</p>
 <ul class="sp-points">{points}</ul>
 <div class="sp-actions">{''.join(buttons)}</div>
 </div>
-<div class="sp-inset">
-<div class="sp-bar"><span></span><span></span><span></span><a href="{escape(p.get('live') or sp['embed'])}" target="_blank" rel="noopener">{escape(host)}</a></div>
+<figure class="sp-inset">
 <div class="sp-frame"{frame_style}>
 <iframe src="{escape(sp['embed'])}" title="{escape(p['name'])} live map" loading="lazy" allow="fullscreen"></iframe>
-<button class="sp-activate" type="button">Click to explore the live map</button>
+<button class="sp-activate" type="button" aria-label="Use the {escape(p['name'])} map"></button>
 </div>
-</div>
+<figcaption><a href="{escape(p.get('live') or sp['embed'])}" target="_blank" rel="noopener">{escape(host)} ↗</a><span>Live — click the map to pan and zoom</span></figcaption>
+</figure>
 </section>"""
 
 
