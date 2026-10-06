@@ -86,7 +86,21 @@
         "Hydrology"
       ],
       "featured": true,
-      "hidden": false
+      "hidden": false,
+      "spotlight": {
+        "home": false,
+        "embed": "https://gwc.itogeospatial.com",
+        "headline": "How water rules change along one creek.",
+        "points": [
+          "Follows Bozeman Creek from the wilderness to the East Gallatin River",
+          "Shows how governance shifts across natural, rural, park, residential, and urban zones",
+          "Built as an interactive story with the Gallatin Watershed Council"
+        ],
+        "cta": {
+          "label": "Open the map",
+          "href": "https://gwc.itogeospatial.com"
+        }
+      }
     },
     {
       "id": "mt-airports",
@@ -104,7 +118,21 @@
         "Economic data"
       ],
       "featured": true,
-      "hidden": false
+      "hidden": false,
+      "spotlight": {
+        "home": false,
+        "embed": "https://storymaps.arcgis.com/stories/534906760ca243e0b4aee889878dd74f",
+        "headline": "What Montana's airports are worth to the state.",
+        "points": [
+          "Every public airport in Montana, mapped",
+          "Passenger counts, capital investment, and workforce trends",
+          "Built with Zenith Economics and the MSU Geospatial Core Facility"
+        ],
+        "cta": {
+          "label": "Open the StoryMap",
+          "href": "https://storymaps.arcgis.com/stories/534906760ca243e0b4aee889878dd74f"
+        }
+      }
     },
     {
       "id": "roadside",

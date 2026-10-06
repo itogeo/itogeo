@@ -9,7 +9,8 @@ marker comments in two pages:
                           <!-- PORTFOLIO:START --> ... <!-- PORTFOLIO:END -->
 
 A project with a "spotlight" block gets a large section with its live site
-embedded as an inset. The inset ignores scrolling until clicked, so it never
+embedded as an inset. Spotlights appear on the projects page; set
+"home": false inside a spotlight to keep it off the homepage. The inset ignores scrolling until clicked, so it never
 hijacks the page.
 
 Usage:
@@ -54,6 +55,11 @@ REQUIRED = ("id", "name", "kind", "tagline")
 MAX_FEATURED = 6
 
 
+def on_home(p: dict) -> bool:
+    sp = p.get("spotlight")
+    return bool(sp) and sp.get("home", True)
+
+
 def load() -> list[dict]:
     projects = json.loads(DATA.read_text(encoding="utf-8"))["projects"]
     errors = []
@@ -82,7 +88,7 @@ def load() -> list[dict]:
                 errors.append(f"{where}: {key} must start with https://")
     featured = [
         p for p in projects
-        if p.get("featured") and not p.get("hidden") and not p.get("spotlight")
+        if p.get("featured") and not p.get("hidden") and not on_home(p)
     ]
     if len(featured) > MAX_FEATURED:
         errors.append(f"{len(featured)} featured projects; keep it to {MAX_FEATURED}")
@@ -119,9 +125,6 @@ def card(p: dict, full: bool) -> str:
     parts.append(f'<p class="pf-tagline">{escape(p["tagline"])}</p>')
     if full and p.get("description"):
         parts.append(f'<p class="pf-desc">{escape(p["description"])}</p>')
-    if full and p.get("stack"):
-        chips = "".join(f"<li>{escape(s)}</li>" for s in p["stack"])
-        parts.append(f'<ul class="pf-stack">{chips}</ul>')
     parts.append(links(p))
     parts.append("</article>")
     return "\n".join(x for x in parts if x)
@@ -139,7 +142,7 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 
 def spotlight(p: dict, index: int) -> str:
     sp = p["spotlight"]
-    host = re.sub(r"^https://", "", p.get("live") or sp["embed"]).rstrip("/")
+    host = re.sub(r"^https://", "", p.get("live") or sp["embed"]).split("/")[0]
     points = "".join(f"<li>{escape(x)}</li>" for x in sp["points"])
     cta = sp.get("cta") or {"label": f"Open {p['name']}", "href": p.get("live")}
     buttons = [
@@ -177,8 +180,8 @@ def spotlight(p: dict, index: int) -> str:
 </section>"""
 
 
-def spotlight_html(projects: list[dict]) -> str:
-    items = [p for p in projects if p.get("spotlight")]
+def spotlight_html(projects: list[dict], home: bool) -> str:
+    items = [p for p in projects if (on_home(p) if home else p.get("spotlight"))]
     if not items:
         return ""
     body = "\n".join(spotlight(p, i) for i, p in enumerate(items))
@@ -189,7 +192,7 @@ def featured_html(projects: list[dict]) -> str:
     cards = "\n".join(
         card(p, full=False)
         for p in projects
-        if p.get("featured") and not p.get("spotlight")
+        if p.get("featured") and not on_home(p)
     )
     return (
         '<section class="why-ito-section pf-section">\n'
@@ -200,18 +203,9 @@ def featured_html(projects: list[dict]) -> str:
 
 
 def portfolio_html(projects: list[dict]) -> str:
-    n_open = sum(1 for p in projects if p.get("repo"))
-    n_live = sum(1 for p in projects if p.get("live"))
-    jump = " · ".join(
-        f'<a href="#{k}-work">{title}</a>' for k, (title, _) in KINDS.items()
-    )
-    out = [
-        '<section class="why-ito-section pf-section">',
-        f'<p class="pf-summary">{len(projects)} projects · {n_live} live · '
-        f'{n_open} with public code &nbsp;|&nbsp; {jump}</p>',
-    ]
+    out = ['<section class="why-ito-section pf-section">']
     for kind, (title, blurb) in KINDS.items():
-        group = [p for p in projects if p["kind"] == kind]
+        group = [p for p in projects if p["kind"] == kind and not p.get("spotlight")]
         if not group:
             continue
         cards = "\n".join(card(p, full=True) for p in group)
@@ -245,9 +239,8 @@ def main() -> None:
     if args.check:
         print(f"ok: {len(projects)} published projects")
         return
-    spot = spotlight_html(projects)
-    inject(HOME, "SPOTLIGHT", spot)
-    inject(PROJECTS, "SPOTLIGHT", spot)
+    inject(HOME, "SPOTLIGHT", spotlight_html(projects, home=True))
+    inject(PROJECTS, "SPOTLIGHT", spotlight_html(projects, home=False))
     inject(HOME, "FEATURED", featured_html(projects))
     inject(PROJECTS, "PORTFOLIO", portfolio_html(projects))
 
