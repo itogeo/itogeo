@@ -111,6 +111,51 @@
       </div>
     </section>
 
+    <!-- SPOTLIGHT:START -->
+<div class="sp-wrap">
+<section class="sp" id="spotlight-snowline">
+<div class="sp-text">
+<div class="pf-meta"><span class="pf-kind pf-kind--product">Product</span><span class="pf-status">Live · open source Oct 10</span></div>
+<h2 class="sp-name">Snowline</h2>
+<p class="sp-headline">Where the snow is today, from space.</p>
+<ul class="sp-points"><li>Daily snow extent from Sentinel-2 and Landsat</li><li>Every SNOTEL station, compared against its 20-year median</li><li>Webcams alongside the satellite view</li><li>Free, and open source from October 10</li></ul>
+<div class="sp-actions"><a class="btn" href="https://snowline.itogeospatial.com" target="_blank" rel="noopener">Open Snowline</a></div>
+</div>
+<div class="sp-inset">
+<div class="sp-bar"><span></span><span></span><span></span><a href="https://snowline.itogeospatial.com" target="_blank" rel="noopener">snowline.itogeospatial.com</a></div>
+<div class="sp-frame">
+<iframe src="https://snowline.itogeospatial.com" title="Snowline live map" loading="lazy" allow="fullscreen"></iframe>
+<button class="sp-activate" type="button">Click to explore the live map</button>
+</div>
+</div>
+</section>
+<section class="sp sp--flip" id="spotlight-data4mt">
+<div class="sp-text">
+<div class="pf-meta"><span class="pf-kind pf-kind--product">Product</span><span class="pf-status">Live · taking subscribers</span></div>
+<h2 class="sp-name">Data4MT</h2>
+<p class="sp-headline">Montana&#x27;s public records, in one map.</p>
+<ul class="sp-points"><li>Parcels and ownership statewide</li><li>Building, septic, and environmental permits</li><li>2,779 conservation easements, zoning, FEMA flood, and water rights</li><li>A 2016–2025 change explorer for subdivisions and sales</li></ul>
+<div class="sp-actions"><a class="btn" href="mailto:itogeospatial@gmail.com?subject=Data4MT%20data%20feed">Ask about a data feed</a><a class="btn btn-outline" href="https://data4mt.itogeospatial.com" target="_blank" rel="noopener">Open the map ↗</a></div>
+</div>
+<div class="sp-inset">
+<div class="sp-bar"><span></span><span></span><span></span><a href="https://data4mt.itogeospatial.com" target="_blank" rel="noopener">data4mt.itogeospatial.com</a></div>
+<div class="sp-frame" style="--sp-scale: 0.55">
+<iframe src="https://data4mt.itogeospatial.com" title="Data4MT live map" loading="lazy" allow="fullscreen"></iframe>
+<button class="sp-activate" type="button">Click to explore the live map</button>
+</div>
+</div>
+</section>
+</div>
+<script>
+document.querySelectorAll('.sp-inset').forEach(function (inset) {
+  var btn = inset.querySelector('.sp-activate');
+  if (!btn) return;
+  btn.addEventListener('click', function () { inset.classList.add('is-live'); });
+  inset.addEventListener('mouseleave', function () { inset.classList.remove('is-live'); });
+});
+</script>
+<!-- SPOTLIGHT:END -->
+
     <!-- PORTFOLIO:START -->
 <section class="why-ito-section pf-section">
 <p class="pf-summary">13 projects · 9 live · 9 with public code &nbsp;|&nbsp; <a href="#client-work">Client work</a> · <a href="#product-work">Products</a> · <a href="#open-work">Open source & free tools</a></p>

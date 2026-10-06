@@ -3,8 +3,14 @@
 Writes static HTML (no JavaScript needed, readable by search engines) between
 marker comments in two pages:
 
-    index.html            <!-- FEATURED:START --> ... <!-- FEATURED:END -->
-    projects/index.html   <!-- PORTFOLIO:START --> ... <!-- PORTFOLIO:END -->
+    index.html            <!-- SPOTLIGHT:START --> ... <!-- SPOTLIGHT:END -->
+                          <!-- FEATURED:START --> ... <!-- FEATURED:END -->
+    projects/index.html   <!-- SPOTLIGHT:START --> ... <!-- SPOTLIGHT:END -->
+                          <!-- PORTFOLIO:START --> ... <!-- PORTFOLIO:END -->
+
+A project with a "spotlight" block gets a large section with its live site
+embedded as an inset. The inset ignores scrolling until clicked, so it never
+hijacks the page.
 
 Usage:
     python scripts/build_portfolio.py           # rebuild both pages
@@ -51,11 +57,22 @@ def load() -> list[dict]:
         if p.get("id") in seen:
             errors.append(f"{where}: duplicate id")
         seen.add(p.get("id"))
+        sp = p.get("spotlight")
+        if sp:
+            if not str(sp.get("embed", "")).startswith("https://"):
+                errors.append(f"{where}: spotlight.embed must start with https://")
+            if not 0.4 <= float(sp.get("scale", 1)) <= 1:
+                errors.append(f"{where}: spotlight.scale must be between 0.4 and 1")
+            if not sp.get("points"):
+                errors.append(f"{where}: spotlight needs a list of points")
         for key in ("live", "repo"):
             url = p.get(key)
             if url and not url.startswith("https://"):
                 errors.append(f"{where}: {key} must start with https://")
-    featured = [p for p in projects if p.get("featured") and not p.get("hidden")]
+    featured = [
+        p for p in projects
+        if p.get("featured") and not p.get("hidden") and not p.get("spotlight")
+    ]
     if len(featured) > MAX_FEATURED:
         errors.append(f"{len(featured)} featured projects; keep it to {MAX_FEATURED}")
     if errors:
@@ -103,8 +120,72 @@ def card(p: dict, full: bool) -> str:
     return "\n".join(x for x in parts if x)
 
 
+INSET_SCRIPT = """<script>
+document.querySelectorAll('.sp-inset').forEach(function (inset) {
+  var btn = inset.querySelector('.sp-activate');
+  if (!btn) return;
+  btn.addEventListener('click', function () { inset.classList.add('is-live'); });
+  inset.addEventListener('mouseleave', function () { inset.classList.remove('is-live'); });
+});
+</script>"""
+
+
+def spotlight(p: dict, index: int) -> str:
+    sp = p["spotlight"]
+    host = re.sub(r"^https://", "", p.get("live") or sp["embed"]).rstrip("/")
+    points = "".join(f"<li>{escape(x)}</li>" for x in sp["points"])
+    cta = sp.get("cta") or {"label": f"Open {p['name']}", "href": p.get("live")}
+    buttons = [
+        f'<a class="btn" href="{escape(cta["href"])}"'
+        + ("" if cta["href"].startswith("mailto:") else ' target="_blank" rel="noopener"')
+        + f'>{escape(cta["label"])}</a>'
+    ]
+    if p.get("live") and cta["href"] != p["live"]:
+        buttons.append(
+            f'<a class="btn btn-outline" href="{escape(p["live"])}" '
+            f'target="_blank" rel="noopener">Open the map ↗</a>'
+        )
+    if p.get("repo"):
+        buttons.append(
+            f'<a class="btn btn-outline" href="{escape(p["repo"])}" '
+            f'target="_blank" rel="noopener">Code on GitHub ↗</a>'
+        )
+    flip = " sp--flip" if index % 2 else ""
+    scale = float(sp.get("scale", 1))
+    frame_style = f' style="--sp-scale: {scale}"' if scale != 1 else ""
+    status = f'<span class="pf-status">{escape(p["status"])}</span>' if p.get("status") else ""
+    return f"""<section class="sp{flip}" id="spotlight-{escape(p['id'])}">
+<div class="sp-text">
+<div class="pf-meta"><span class="pf-kind pf-kind--{p['kind']}">{KIND_LABEL[p['kind']]}</span>{status}</div>
+<h2 class="sp-name">{escape(p['name'])}</h2>
+<p class="sp-headline">{escape(sp.get('headline') or p['tagline'])}</p>
+<ul class="sp-points">{points}</ul>
+<div class="sp-actions">{''.join(buttons)}</div>
+</div>
+<div class="sp-inset">
+<div class="sp-bar"><span></span><span></span><span></span><a href="{escape(p.get('live') or sp['embed'])}" target="_blank" rel="noopener">{escape(host)}</a></div>
+<div class="sp-frame"{frame_style}>
+<iframe src="{escape(sp['embed'])}" title="{escape(p['name'])} live map" loading="lazy" allow="fullscreen"></iframe>
+<button class="sp-activate" type="button">Click to explore the live map</button>
+</div>
+</div>
+</section>"""
+
+
+def spotlight_html(projects: list[dict]) -> str:
+    items = [p for p in projects if p.get("spotlight")]
+    if not items:
+        return ""
+    body = "\n".join(spotlight(p, i) for i, p in enumerate(items))
+    return f'<div class="sp-wrap">\n{body}\n</div>\n{INSET_SCRIPT}'
+
+
 def featured_html(projects: list[dict]) -> str:
-    cards = "\n".join(card(p, full=False) for p in projects if p.get("featured"))
+    cards = "\n".join(
+        card(p, full=False)
+        for p in projects
+        if p.get("featured") and not p.get("spotlight")
+    )
     return (
         '<section class="why-ito-section pf-section">\n'
         '<div class="pf-heading"><h2>Selected work</h2>'
@@ -159,6 +240,9 @@ def main() -> None:
     if args.check:
         print(f"ok: {len(projects)} published projects")
         return
+    spot = spotlight_html(projects)
+    inject(HOME, "SPOTLIGHT", spot)
+    inject(PROJECTS, "SPOTLIGHT", spot)
     inject(HOME, "FEATURED", featured_html(projects))
     inject(PROJECTS, "PORTFOLIO", portfolio_html(projects))
 

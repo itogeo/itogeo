@@ -1,5 +1,5 @@
 {
-  "_readme": "Every project on the site lives here. Edit this file, then run: python scripts/build_portfolio.py. kind = client | product | open. Set featured: true to show it on the homepage (max 6). Set hidden: true to keep an entry here without publishing it. live / repo can be null.",
+  "_readme": "Every project on the site lives here. Edit this file, then run: python scripts/build_portfolio.py. kind = client | product | open. spotlight = a large homepage section with the live site embedded. featured: true puts a card in the homepage 'Selected work' grid (max 6, spotlights excluded). hidden: true keeps an entry here without publishing it. live / repo can be null. spotlight.scale (0.4–1) renders the inset at desktop size and shrinks it, for sites that need a wide screen.",
   "projects": [
     {
       "id": "snowline",
@@ -12,9 +12,28 @@
       "year": 2026,
       "live": "https://snowline.itogeospatial.com",
       "repo": null,
-      "stack": ["Sentinel-2", "Landsat", "SNOTEL", "Python"],
-      "featured": true,
-      "hidden": false
+      "stack": [
+        "Sentinel-2",
+        "Landsat",
+        "SNOTEL",
+        "Python"
+      ],
+      "featured": false,
+      "hidden": false,
+      "spotlight": {
+        "embed": "https://snowline.itogeospatial.com",
+        "headline": "Where the snow is today, from space.",
+        "points": [
+          "Daily snow extent from Sentinel-2 and Landsat",
+          "Every SNOTEL station, compared against its 20-year median",
+          "Webcams alongside the satellite view",
+          "Free, and open source from October 10"
+        ],
+        "cta": {
+          "label": "Open Snowline",
+          "href": "https://snowline.itogeospatial.com"
+        }
+      }
     },
     {
       "id": "data4mt",
@@ -27,9 +46,28 @@
       "year": 2026,
       "live": "https://data4mt.itogeospatial.com",
       "repo": null,
-      "stack": ["Python", "Statewide ETL", "Web map"],
-      "featured": true,
-      "hidden": false
+      "stack": [
+        "Python",
+        "Statewide ETL",
+        "Web map"
+      ],
+      "featured": false,
+      "hidden": false,
+      "spotlight": {
+        "embed": "https://data4mt.itogeospatial.com",
+        "headline": "Montana's public records, in one map.",
+        "points": [
+          "Parcels and ownership statewide",
+          "Building, septic, and environmental permits",
+          "2,779 conservation easements, zoning, FEMA flood, and water rights",
+          "A 2016–2025 change explorer for subdivisions and sales"
+        ],
+        "cta": {
+          "label": "Ask about a data feed",
+          "href": "mailto:itogeospatial@gmail.com?subject=Data4MT%20data%20feed"
+        },
+        "scale": 0.55
+      }
     },
     {
       "id": "gallatin-continuity",
@@ -42,7 +80,11 @@
       "year": 2026,
       "live": "https://gwc.itogeospatial.com",
       "repo": "https://github.com/itogeo/gallatin_continuity",
-      "stack": ["JavaScript", "StoryMap", "Hydrology"],
+      "stack": [
+        "JavaScript",
+        "StoryMap",
+        "Hydrology"
+      ],
       "featured": true,
       "hidden": false
     },
@@ -57,24 +99,12 @@
       "year": 2026,
       "live": "https://storymaps.arcgis.com/stories/534906760ca243e0b4aee889878dd74f",
       "repo": null,
-      "stack": ["ArcGIS StoryMaps", "Economic data"],
+      "stack": [
+        "ArcGIS StoryMaps",
+        "Economic data"
+      ],
       "featured": true,
       "hidden": false
-    },
-    {
-      "id": "parcel-priority",
-      "name": "Parcel Priority Tool",
-      "kind": "client",
-      "tagline": "Conservation priority scoring for every parcel in the service area.",
-      "description": "Transparent, repeatable parcel scoring a land trust can defend at a board meeting.",
-      "partner": "Gallatin Valley Land Trust",
-      "status": "In progress · Dec 2026",
-      "year": 2026,
-      "live": null,
-      "repo": null,
-      "stack": ["Python", "Suitability analysis"],
-      "featured": false,
-      "hidden": true
     },
     {
       "id": "site-unseen",
@@ -87,8 +117,12 @@
       "year": 2026,
       "live": null,
       "repo": "https://github.com/itogeo/site-unseen",
-      "stack": ["Python", "FERC data", "Entity resolution"],
-      "featured": false,
+      "stack": [
+        "Python",
+        "FERC data",
+        "Entity resolution"
+      ],
+      "featured": true,
       "hidden": false
     },
     {
@@ -102,7 +136,12 @@
       "year": 2026,
       "live": "https://itogeo.github.io/roadside/",
       "repo": "https://github.com/itogeo/roadside",
-      "stack": ["Python", "MapLibre", "PMTiles", "GitHub Pages"],
+      "stack": [
+        "Python",
+        "MapLibre",
+        "PMTiles",
+        "GitHub Pages"
+      ],
       "featured": true,
       "hidden": false
     },
@@ -117,7 +156,12 @@
       "year": 2026,
       "live": "https://rivernight.itogeospatial.com",
       "repo": "https://github.com/itogeo/rivernight",
-      "stack": ["Leaflet", "PWA", "USGS", "Python"],
+      "stack": [
+        "Leaflet",
+        "PWA",
+        "USGS",
+        "Python"
+      ],
       "featured": true,
       "hidden": false
     },
@@ -132,8 +176,12 @@
       "year": 2026,
       "live": null,
       "repo": "https://github.com/itogeo/mtpublic",
-      "stack": ["Python", "MSDI", "Cadastral"],
-      "featured": false,
+      "stack": [
+        "Python",
+        "MSDI",
+        "Cadastral"
+      ],
+      "featured": true,
       "hidden": false
     },
     {
@@ -147,7 +195,10 @@
       "year": 2026,
       "live": "https://itogeospatial.com/tools/",
       "repo": "https://github.com/itogeo/rivertime",
-      "stack": ["Python", "GitHub Actions"],
+      "stack": [
+        "Python",
+        "GitHub Actions"
+      ],
       "featured": false,
       "hidden": false
     },
@@ -162,7 +213,11 @@
       "year": 2026,
       "live": null,
       "repo": "https://github.com/itogeo/recgovme",
-      "stack": ["TypeScript", "Cloudflare Workers", "Supabase"],
+      "stack": [
+        "TypeScript",
+        "Cloudflare Workers",
+        "Supabase"
+      ],
       "featured": false,
       "hidden": false
     },
@@ -177,7 +232,10 @@
       "year": 2026,
       "live": "https://mapdigitizer.onrender.com/",
       "repo": null,
-      "stack": ["Python", "Computer vision"],
+      "stack": [
+        "Python",
+        "Computer vision"
+      ],
       "featured": false,
       "hidden": false
     },
@@ -192,7 +250,10 @@
       "year": 2026,
       "live": null,
       "repo": "https://github.com/itogeo/yellowstone-waterways",
-      "stack": ["Python", "OpenStreetMap"],
+      "stack": [
+        "Python",
+        "OpenStreetMap"
+      ],
       "featured": false,
       "hidden": false
     },
@@ -207,7 +268,10 @@
       "year": 2026,
       "live": "https://churchhouserules.itogeospatial.com",
       "repo": "https://github.com/itogeo/churchhouse-rules",
-      "stack": ["Python", "Cloudflare Pages"],
+      "stack": [
+        "Python",
+        "Cloudflare Pages"
+      ],
       "featured": false,
       "hidden": false
     }
