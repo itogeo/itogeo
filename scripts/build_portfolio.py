@@ -1,16 +1,14 @@
 """Build the portfolio sections of the site from data/portfolio.json.
 
-Writes static HTML (no JavaScript needed, readable by search engines) between
-marker comments in two pages:
+The site is a single page. This writes static HTML (readable by search
+engines) between marker comments in index.html:
 
-    index.html            <!-- SPOTLIGHT:START --> ... <!-- SPOTLIGHT:END -->
-                          <!-- FEATURED:START --> ... <!-- FEATURED:END -->
-    projects/index.html   <!-- SPOTLIGHT:START --> ... <!-- SPOTLIGHT:END -->
-                          <!-- PORTFOLIO:START --> ... <!-- PORTFOLIO:END -->
+    <!-- SPOTLIGHT:START --> ... <!-- SPOTLIGHT:END -->   big sections with live maps
+    <!-- FEATURED:START -->  ... <!-- FEATURED:END -->    the "More work" cards
 
 A project with a "spotlight" block gets a large section with its live site
-embedded as an inset, rendered at desktop size (1280x800) and scaled down to fit. Spotlights appear on the projects page; set
-"home": false inside a spotlight to keep it off the homepage. The inset ignores scrolling until clicked, so it never
+embedded as an inset, rendered at desktop size (1280x800) and scaled down to fit. Set "home": false inside a spotlight to show
+that project as a card instead. The inset ignores scrolling until clicked, so it never
 hijacks the page.
 
 Usage:
@@ -32,7 +30,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "portfolio.json"
 HOME = ROOT / "index.html"
-PROJECTS = ROOT / "projects" / "index.html"
 
 KINDS = {
     "client": ("Client work", "Maps and analysis built with partners."),
@@ -206,27 +203,9 @@ def featured_html(projects: list[dict]) -> str:
     )
     return (
         '<section class="why-ito-section pf-section">\n'
-        '<div class="pf-heading"><h2>Selected work</h2>'
-        '<a class="pf-all" href="/projects/">All projects →</a></div>\n'
+        '<div class="pf-heading"><h2>More work</h2></div>\n'
         f'<div class="pf-grid">\n{cards}\n</div>\n</section>'
     )
-
-
-def portfolio_html(projects: list[dict]) -> str:
-    out = ['<section class="why-ito-section pf-section">']
-    for kind, (title, blurb) in KINDS.items():
-        group = [p for p in projects if p["kind"] == kind and not p.get("spotlight")]
-        if not group:
-            continue
-        cards = "\n".join(card(p, full=True) for p in group)
-        out.append(
-            f'<div class="pf-group" id="{kind}-work">'
-            f'<div class="pf-heading"><h2>{title}</h2></div>'
-            f'<p class="pf-blurb">{blurb}</p>'
-            f'<div class="pf-grid">\n{cards}\n</div></div>'
-        )
-    out.append("</section>")
-    return "\n".join(out)
 
 
 def inject(path: Path, marker: str, html: str) -> None:
@@ -250,9 +229,7 @@ def main() -> None:
         print(f"ok: {len(projects)} published projects")
         return
     inject(HOME, "SPOTLIGHT", spotlight_html(projects, home=True))
-    inject(PROJECTS, "SPOTLIGHT", spotlight_html(projects, home=False))
     inject(HOME, "FEATURED", featured_html(projects))
-    inject(PROJECTS, "PORTFOLIO", portfolio_html(projects))
 
 
 if __name__ == "__main__":

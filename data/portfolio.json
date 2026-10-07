@@ -1,5 +1,5 @@
 {
-  "_readme": "Every project on the site lives here. Edit this file, then run: python scripts/build_portfolio.py. kind = client | product | open. spotlight = a large homepage section with the live site embedded. featured: true puts a card in the homepage 'Selected work' grid (max 6, spotlights excluded). hidden: true keeps an entry here without publishing it. live / repo can be null.",
+  "_readme": "Every project on the site lives here. Edit this file, then run: python scripts/build_portfolio.py. The site is one page: projects with a spotlight (and home not false) get a large section with the live site embedded; everything else with featured: true becomes a card under 'More work'. hidden: true keeps an entry here without publishing it. live / repo can be null.",
   "projects": [
     {
       "id": "snowline",
@@ -162,13 +162,13 @@
       "partner": null,
       "status": "Live",
       "year": 2026,
-      "live": "https://itogeospatial.com/tools/",
+      "live": "https://itogeospatial.com/permits/",
       "repo": "https://github.com/itogeo/rivertime",
       "stack": [
         "Python",
         "GitHub Actions"
       ],
-      "featured": false,
+      "featured": true,
       "hidden": false
     },
     {
@@ -186,7 +186,7 @@
         "Python",
         "Computer vision"
       ],
-      "featured": false,
+      "featured": true,
       "hidden": false
     },
     {
@@ -204,7 +204,7 @@
         "Python",
         "Cloudflare Pages"
       ],
-      "featured": false,
+      "featured": true,
       "hidden": false
     }
   ]

@@ -1592,3 +1592,14 @@ footer a:hover {
 @media (prefers-reduced-motion: reduce) {
   .logo .logo-mark img.logo-sat { animation: none; }
 }
+
+/* One-page layout */
+.anchor-target { position: relative; top: -80px; visibility: hidden; }
+#about, #contact { scroll-margin-top: 90px; }
+.about-ian { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem 2.5rem; max-width: 900px; }
+.about-photo { width: 200px; height: 200px; border-radius: 16px; object-fit: cover; object-position: center 30%; flex: none; }
+.about-text { flex: 1 1 360px; }
+.about-text h2 { text-align: left; color: var(--navy-900); margin: 0 0 0.75rem; }
+.about-text p { color: var(--text-muted); margin: 0 0 0.9rem; line-height: 1.7; }
+
+.hero-content p a { color: var(--navy-700); font-weight: 600; }

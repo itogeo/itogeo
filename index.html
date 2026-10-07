@@ -27,8 +27,8 @@
         <h1>Ito Geospatial</h1>
         <p>Mapping studio in Bozeman, Montana.</p>
         <div class="hero-actions">
-          <a href="/tools/" class="btn">Tools</a>
-          <a href="/projects/" class="btn btn-outline">Projects</a>
+          <a href="#work" class="btn">See the work</a>
+          <a href="#contact" class="btn btn-outline">Get in touch</a>
         </div>
       </div>
     </section>
@@ -51,6 +51,7 @@
       </div>
     </section>
 
+    <div id="work" class="anchor-target"></div>
     <!-- SPOTLIGHT:START -->
 <div class="sp-wrap">
 <section class="sp" id="spotlight-snowline">
@@ -110,7 +111,7 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 
     <!-- FEATURED:START -->
 <section class="why-ito-section pf-section">
-<div class="pf-heading"><h2>Selected work</h2><a class="pf-all" href="/projects/">All projects →</a></div>
+<div class="pf-heading"><h2>More work</h2></div>
 <div class="pf-grid">
 <article class="pf-card" id="gallatin-continuity">
 <p class="pf-meta">Client work</p>
@@ -132,12 +133,46 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 <p class="pf-tagline">Read Montana and Idaho highway markers without pulling over.</p>
 <div class="pf-links"><a class="pf-link pf-link--live" href="https://itogeo.github.io/roadside/" target="_blank" rel="noopener">Live site ↗</a><a class="pf-link" href="https://github.com/itogeo/roadside" target="_blank" rel="noopener">Code on GitHub ↗</a></div>
 </article>
+<article class="pf-card" id="permit-alerts">
+<p class="pf-meta">Open source</p>
+<h3>Salmon River Permit Alerts</h3>
+<p class="pf-tagline">An email when a Four Rivers permit date opens up.</p>
+<div class="pf-links"><a class="pf-link pf-link--live" href="https://itogeospatial.com/permits/" target="_blank" rel="noopener">Live site ↗</a><a class="pf-link" href="https://github.com/itogeo/rivertime" target="_blank" rel="noopener">Code on GitHub ↗</a></div>
+</article>
+<article class="pf-card" id="mapdigitizer">
+<p class="pf-meta">Open source — Beta</p>
+<h3>Map Digitizer</h3>
+<p class="pf-tagline">Turn a screenshot of a zoning map into GeoJSON, Shapefile, or KML.</p>
+<div class="pf-links"><a class="pf-link pf-link--live" href="https://mapdigitizer.onrender.com/" target="_blank" rel="noopener">Live site ↗</a></div>
+</article>
+<article class="pf-card" id="churchhouse-rules">
+<p class="pf-meta">Open source</p>
+<h3>Churchhouse Rule$</h3>
+<p class="pf-tagline">Every game we play, written down.</p>
+<div class="pf-links"><a class="pf-link pf-link--live" href="https://churchhouserules.itogeospatial.com" target="_blank" rel="noopener">Live site ↗</a><a class="pf-link" href="https://github.com/itogeo/churchhouse-rules" target="_blank" rel="noopener">Code on GitHub ↗</a></div>
+</article>
 </div>
 </section>
 <!-- FEATURED:END -->
 
-    <!-- TEAM + PARTNERS -->
-    <div id="about" data-include="/partials/team.html"></div>
+    <!-- ABOUT -->
+    <section id="about" class="page-section about-ian">
+      <img src="/data/team/IVD.png" alt="Ian Van Dusen" class="about-photo" width="400" height="400" />
+      <div class="about-text">
+        <h2>About</h2>
+        <p>
+          I'm Ian Van Dusen. I studied geology at Occidental College, then did NASA-funded remote sensing research on
+          surface-water flooding for my M.S. in Geography at the University of Oregon. I mapped wildfires from the air at
+          Bridger Aerospace, and today I build automated satellite imagery pipelines.
+        </p>
+        <p>
+          Ito Geospatial is where I bring that work to land trusts, towns, and small teams around Montana, and where I
+          build free tools like Snowline for people who'd rather be outside.
+        </p>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
     <div data-include="/partials/partners.html"></div>
 
     <section id="contact" class="page-section contact-section contact-simple">
@@ -155,7 +190,6 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
   <script src="/assets/js/load_partials.js"></script>
   <script src="/assets/js/backgrounds.js"></script>
   <script src="/assets/js/header_fade.js"></script>
-  <script src="/assets/js/team.js"></script>
 </body>
 </html>
 <!-- deployed Wed Jan 28 09:52:46 MST 2026 -->
