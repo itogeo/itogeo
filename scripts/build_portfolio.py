@@ -94,13 +94,13 @@ def links(p: dict) -> str:
     out = []
     if p.get("live"):
         out.append(
-            f'<a class="pf-link pf-link--live" href="{escape(p["live"])}" '
-            f'target="_blank" rel="noopener">Live site ↗</a>'
+            f'<a class="tlink" href="{escape(p["live"])}" '
+            f'target="_blank" rel="noopener">Open ↗</a>'
         )
     if p.get("repo"):
         out.append(
-            f'<a class="pf-link" href="{escape(p["repo"])}" '
-            f'target="_blank" rel="noopener">Code on GitHub ↗</a>'
+            f'<a class="tlink" href="{escape(p["repo"])}" '
+            f'target="_blank" rel="noopener">Code ↗</a>'
         )
     if not out:
         return ""
@@ -149,19 +149,19 @@ def spotlight(p: dict, index: int) -> str:
     host = re.sub(r"^https://", "", p.get("live") or sp["embed"]).split("/")[0]
     cta = sp.get("cta") or {"label": f"Open {p['name']}", "href": p.get("live")}
     buttons = [
-        f'<a class="btn" href="{escape(cta["href"])}"'
+        f'<a class="tlink" href="{escape(cta["href"])}"'
         + ("" if cta["href"].startswith("mailto:") else ' target="_blank" rel="noopener"')
-        + f'>{escape(cta["label"])}</a>'
+        + f'>{escape(cta["label"])}{"" if cta["href"].startswith("mailto:") else " ↗"}</a>'
     ]
     if p.get("live") and cta["href"] != p["live"]:
         buttons.append(
-            f'<a class="btn btn-outline" href="{escape(p["live"])}" '
+            f'<a class="tlink" href="{escape(p["live"])}" '
             f'target="_blank" rel="noopener">Open the map ↗</a>'
         )
     if p.get("repo"):
         buttons.append(
-            f'<a class="btn btn-outline" href="{escape(p["repo"])}" '
-            f'target="_blank" rel="noopener">Code on GitHub ↗</a>'
+            f'<a class="tlink" href="{escape(p["repo"])}" '
+            f'target="_blank" rel="noopener">Code ↗</a>'
         )
     flip = " sp--flip" if index % 2 else ""
     return f"""<section class="sp{flip}" id="spotlight-{escape(p['id'])}">

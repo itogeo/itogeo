@@ -1603,3 +1603,21 @@ footer a:hover {
 .about-text p { color: var(--text-muted); margin: 0 0 0.9rem; line-height: 1.7; }
 
 .hero-content p a { color: var(--navy-700); font-weight: 600; }
+
+/* Plain text links instead of pill buttons */
+.tlink {
+  color: var(--navy-800); font-weight: 600; text-decoration: underline;
+  text-decoration-thickness: 1px; text-underline-offset: 4px;
+  text-decoration-color: rgba(31, 58, 99, 0.35);
+  display: inline-flex; align-items: center; min-height: 44px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+.tlink:hover { color: var(--navy-600); text-decoration-color: currentColor; }
+.tlink--big { font-size: 1.15rem; }
+.pf-links, .sp-actions { gap: 0.25rem 1.5rem; }
+.pf-links { padding-top: 0.25rem; }
+/* squarer corners, flatter surfaces */
+.pf-card, .sp, .contact-section { border-radius: 6px; }
+.sp-frame { border-radius: 4px; }
+.pf-card:hover { transform: none; box-shadow: none; }
+.pf-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); }

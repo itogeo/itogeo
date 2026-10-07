@@ -150,8 +150,8 @@
         "PMTiles",
         "GitHub Pages"
       ],
-      "featured": true,
-      "hidden": false
+      "featured": false,
+      "hidden": true
     },
     {
       "id": "permit-alerts",
@@ -204,8 +204,8 @@
         "Python",
         "Cloudflare Pages"
       ],
-      "featured": true,
-      "hidden": false
+      "featured": false,
+      "hidden": true
     }
   ]
 }
