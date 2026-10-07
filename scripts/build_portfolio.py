@@ -75,8 +75,6 @@ def load() -> list[dict]:
         if sp:
             if not str(sp.get("embed", "")).startswith("https://"):
                 errors.append(f"{where}: spotlight.embed must start with https://")
-            if not sp.get("points"):
-                errors.append(f"{where}: spotlight needs a list of points")
         for key in ("live", "repo"):
             url = p.get(key)
             if url and not url.startswith("https://"):
@@ -112,11 +110,8 @@ def links(p: dict) -> str:
 def card(p: dict, full: bool) -> str:
     parts = [
         f'<article class="pf-card" id="{escape(p["id"])}">',
-        meta_line(p, with_kind=not full),
     ]
     parts.append(f'<h3>{escape(p["name"])}</h3>')
-    if p.get("partner"):
-        parts.append(f'<p class="pf-partner">With {escape(p["partner"])}</p>')
     parts.append(f'<p class="pf-tagline">{escape(p["tagline"])}</p>')
     if full and p.get("description"):
         parts.append(f'<p class="pf-desc">{escape(p["description"])}</p>')
@@ -152,7 +147,6 @@ document.querySelectorAll('.sp-inset').forEach(function (inset) {
 def spotlight(p: dict, index: int) -> str:
     sp = p["spotlight"]
     host = re.sub(r"^https://", "", p.get("live") or sp["embed"]).split("/")[0]
-    points = "".join(f"<li>{escape(x)}</li>" for x in sp["points"])
     cta = sp.get("cta") or {"label": f"Open {p['name']}", "href": p.get("live")}
     buttons = [
         f'<a class="btn" href="{escape(cta["href"])}"'
@@ -174,7 +168,6 @@ def spotlight(p: dict, index: int) -> str:
 <div class="sp-text">
 <h2 class="sp-name">{escape(p['name'])}</h2>
 <p class="sp-headline">{escape(sp.get('headline') or p['tagline'])}</p>
-<ul class="sp-points">{points}</ul>
 <div class="sp-actions">{''.join(buttons)}</div>
 </div>
 <figure class="sp-inset">
@@ -203,7 +196,7 @@ def featured_html(projects: list[dict]) -> str:
     )
     return (
         '<section class="why-ito-section pf-section">\n'
-        '<div class="pf-heading"><h2>More work</h2></div>\n'
+        '<div class="pf-heading"><h2>Work</h2></div>\n'
         f'<div class="pf-grid">\n{cards}\n</div>\n</section>'
     )
 
